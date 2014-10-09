@@ -1,0 +1,233 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+
+% ---- DOCUMENT LAYOUT
+\usepackage{geometry}
+\geometry{a4paper,textwidth=5.9in,textheight=9.0in,marginparsep=7pt,marginparwidth=.8in}
+\setlength\parindent{0in}
+
+% ---- FONTS
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+% \setmainfont[Ligatures={Common}]{Minion Pro}
+\setmainfont[Ligatures={Common}]{Linux Libertine}
+\setsansfont[Ligatures={Common}]{Myriad Pro}
+\definecolor{Gray}{rgb}{0.45,0.45,0.45}
+\definecolor{LightGray}{rgb}{0.65,0.65,0.65}
+\definecolor{LightBlue}{rgb}{0.5,0.5,1.0}
+\definecolor{Blue}{rgb}{0.0,0.0,1.0}
+\newcommand{\amper}{{\itshape\&}~}
+
+% ---- HEADER/FOOTER
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\fancyhf{}
+\fancyfoot[L]{\scriptsize\color{Gray}
+Last updated: \today\- •\-
+Typeset in \href{http://nitens.org/taraborelli/cvtex}{\color{LightBlue}\XeTeX}\hfill
+Page~\thepage~of~\pageref{LastPage}}
+
+% ---- MARGIN
+\usepackage{marginnote}
+\newcommand{\notes}[1]{\marginnote{\color{Gray}\scriptsize #1}}
+\newcommand{\customsection}[1]{\section*{#1\vspace{0.1cm}\hrule\vspace{-0.2cm}}}
+\renewcommand*{\raggedrightmarginnote}{}
+\reversemarginpar
+
+% ----- PUBLICATIONS
+\newcommand{\heading}[1]{{\bfseries\color{Black}#1}}
+\newcommand{\paper}[1]{{``#1'',~}}
+\newcommand{\talk}[1]{{#1,~}}
+\newcommand{\authors}[1]{{#1.~}}
+\newcommand{\journal}[1]{\emph{#1}.~}
+\newcommand{\link}[2]{\href{#1}{{#2}}}
+\newcommand{\html}[1]{\href{#1}{\scriptsize\scshape{[www]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\scshape{[doi]}}}
+
+% ----- HEADINGS
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\sffamily\mdseries\bfseries\large}
+\subsectionfont{\sffamily\mdseries\normalsize}
+\subsubsectionfont{\sffamily\mdseries\upshape\normalsize}
+
+% ----- PDF SETUP
+\usepackage[bookmarks, colorlinks, breaklinks,
+	pdftitle={Gaurav Chaurasia CV},
+	pdfauthor={Gaurav Chaurasia},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}
+\hypersetup{filecolor=Blue,urlcolor=Blue,linkcolor=Gray,citecolor=Black}
+
+% ----- DOCUMENT
+\begin{document}
+\begin{center}{\sffamily\bfseries\color{Black}\Huge Gaurav Chaurasia}\vspace{0.1cm}\hrule\end{center}
+\vspace{-0.2cm}{\scshape\color{Gray}email}: \href{mailto:gchauras@mit.edu}{gchauras@mit.edu}
+\hfill
+{\scshape\color{Gray}url}: \href{http://people.csail.mit.edu/gchauras/}{http://people.csail.mit.edu/gchauras/}
+%
+\customsection{Research Interests}
+\noindent
+\notes{$\bullet$}Image-based rendering \\
+\notes{$\bullet$}Image warping \\
+\notes{$\bullet$}Computational photography \\
+\notes{$\bullet$}GPU acceleration of image processing algorithms \\
+\notes{$\bullet$}Multi-view stereo
+
+\customsection{Current}
+\noindent
+\notes{2014-}\heading{Postdoctoral Associate, {\itshape Massachusetts Institute of Technology, MA, USA}}
+\hfill{\itshape (Adviser: Prof. Fredo Durand)} \\
+Domain specific language for expressing image convolutions as recursive filters to achieve constant time complexity, automatically generate code for multiple architectures and optimize the implementation for GPUs. %\\[0.18cm]
+%
+\customsection{Education}
+\noindent
+\notes{2010-2014}\heading{\textbf{Ph.D} in Computer Science, {\itshape INRIA Sophia Antipolis, France}}
+\hfill{\itshape (Adviser: Dr. George Drettakis)} \\
+{\scshape Thesis: Algorithms \amper Perceptual Analysis for Interactive Free Viewpoint Image-Based Navigation.}
+\\[0.18cm]
+%
+\notes{2009-2010}\heading{\textbf{M.Sc} in Computer Science, {\itshape ENSIMAG \amper INRIA Sophia Antipolis, France}}\\[0.18cm]
+%
+\notes{2005-2009}\heading{\textbf{B.Tech} in Computer Science, {\itshape Indian Institute of Technology Delhi, India}}
+\hfill{\itshape (Adviser: Dr. Subodh Kumar)} \\
+{\scshape Thesis: Real time traffic simulation.} Multi-agent simulation for chaotic city traffic which generalizes
+existing approaches which are restricted to lane-based driving.
+
+\customsection{Visiting Positions}
+\noindent
+\notes{Summer 2013}\heading{{\bfseries Visiting student}, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Adviser: Dr. Fredo Durand)}
+\\Halide (\href{www.halide-lang.org}{halide-lang.org}) frontend for parallel execution of non-parallel algorithms like recursive filters.
+\\[0.18cm]
+%
+\notes{Summer 2012}\heading{{\bfseries Visiting student}, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Adviser: Dr. Ravi Ramamoorthi)}
+\\Procedural noise functions for synthesizing non-Gaussian textures.
+\\[0.18cm]
+%
+\notes{Feb-Jun 2010}\heading{{\bfseries Intern}, {\itshape INRIA Sophia Antipolis, France}} \hfill{\itshape (Adviser: Dr. George Drettakis)}
+\\Image-based rendering for urban scenes.
+\\[0.18cm]
+%
+\notes{Summer 2008}\heading{{\bfseries Intern}, {\itshape NVIDIA Bangalore, India}}
+\\OpenGL-ES extensions for GPU driver for embedded systems, OpenGL-ES 2.0 conformance test suite bugs.
+\\[0.18cm]
+%
+%\notes{Winter 2008}\heading{{\bf Part-time intern}, {\itshape IndiraTech Inc., Nevada, USA}}\\
+%Java web-app to facilitate Federal and State income tax payment.\\[0.18cm]
+%
+\notes{Summer 2007}\heading{{\bfseries Intern}, {\itshape Dublin City University, Ireland}} \hfill{\itshape (Adviser: Dr. Derek Molloy)}
+\\Memory exercises as 3D games and user studies to test effect of 3D user interfaces on human recall.
+
+\customsection{Publications}
+\noindent
+\notes{2014}
+\authors{E. Chapoulie, R. Guerchouche, PD Petit, {\bfseries G. Chaurasia}, P. Robert, G. Drettakis}
+\paper{Reminiscence Therapy using Image-based Rendering in VR}
+\journal{IEEE Virtual Reality}
+\html{http://www-sop.inria.fr/reves/Basilic/2014/CGPCRD14/}
+\doi{http://dx.doi.org/10.1109/VR.2014.6802049}\\[0.18cm]
+%
+\notes{2013}
+\authors{{\bfseries G. Chaurasia}, S. Duchene, O. Sorkine-Hornung, G. Drettakis}
+\paper{Depth Synthesis and Local Warps for Plausible Image-based Navigation}
+\journal{ACM Trans. Graph. 32(3) (presented at SIGGRAPH 2013)}
+\html{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research:spixel_warp}
+\doi{http://dx.doi.org/10.1145/2487228.2487238}\\[0.18cm]
+%
+\notes{2013}
+\authors{P. Vangorp, C. Richardt, E.A. Cooper, {\bfseries G. Chaurasia}, M.S. Banks, G. Drettakis}
+\paper{Perception of Perspective Distortions in Image-Based Rendering}
+\journal{ACM Trans. Graph. 32(4) (SIGGRAPH 2013)}
+\html{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research:slantpercep}
+\doi{http://dx.doi.org/10.1145/2461912.2461971} \\[0.18cm]
+%
+\notes{2011}
+\authors{{\bfseries G. Chaurasia}, O. Sorkine, G. Drettakis}
+\paper{Silhouette-aware Warping for Image-based Rendering}
+\journal{Comput. Graph. Forum 30(4): 1223-1232 (EGSR 2011)}
+\html{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research:warpibr}
+\doi{http://dx.doi.org/10.1111/j.1467-8659.2011.01981.x} \\[0.18cm]
+%
+\notes{2011}\authors{P. Vangorp, {\bfseries G. Chaurasia}, PY Laffont, R. Fleming, G. Drettakis}
+\paper{Perception of Visual Artifacts in Image-Based Rendering of Fa{\c c}ades}
+\journal{Comput. Graph. Forum 30(4): 1241-1250 (EGSR 2011)}
+\html{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research:percepibr}
+\doi{http://dx.doi.org/10.1111/j.1467-8659.2011.01983.x} \\[0.18cm]
+%
+\notes{2011}
+\authors{M. Cabral, P. Vangorp, {\bfseries G. Chaurasia}, E. Chapoulie, M. Hachet, G. Drettakis}
+\paper{A Multimode Immersive Conceptual Design System for Architectural Modeling \amper Lighting}
+\journal{IEEE Symposium on 3D User Interfaces (3DUI 2011)}
+\html{http://www-sop.inria.fr/reves/Basilic/2011/CVCCHD11/}
+\doi{http://dx.doi.org/10.1109/3DUI.2011.5759211} \\[0.18cm]
+%
+\notes{2010}
+\authors{{\bfseries G. Chaurasia}, B.R. Selvamani, N. Gupta, S. Kumar}
+\paper{Virtual Chaotic Traffic Simulation}
+\journal{Indian Conference on Computer Vision, Graphics \amper Image Processing (ICVGIP 2010)}
+\html{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research:traffsim}
+\doi{http://dx.doi.org/10.1145/1924559.1924604}
+
+\customsection{Invited talks}
+\noindent
+\notes{Jul 2013}\talk{Algorithms and Perception for Interactive Free-Viewpoint Image-Based Navigation}
+\journal{Microsoft Research Redmond (eXtreme Computing Group)} \href{http://research.microsoft.com/apps/video/dl.aspx?id=198331}{\scriptsize{[Talk]}} \\[0.18cm]
+\notes{Sept 2013}\talk{Algorithms for Interactive Free-Viewpoint Image-Based Navigation}
+\journal{MIT CSAIL (Graphics Lunch)} \href{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research/mit_csail_sept_2013_talk}{\scriptsize{[Abstract]}}
+
+\customsection{Professional Activities}
+\noindent
+\notes{2014}Reviewer for \link{http://tap.acm.org}{ACM Transations on Applied Perception}, \link{http://graphics.ewha.ac.kr/PG14/}{Pacific Graphics 2014} \\
+\notes{2013}Reviewer for \link{http://sa2013.siggraph.org/en/}{SIGGRAPH Asia 2013} \\
+\notes{2012}Reviewer for \link{http://www.springer.com/engineering/signals/journal/11760}{Journal of Signal, Image and Video Processing} \\
+\notes{2011}Reviewer for \link{http://s2012.siggraph.org}{SIGGRAPH 2012}, \link{http://www.eurographics2012.it}{Eurographics 2012}
+
+% \customsection{Supervision \amper Teaching}
+% \notes{2013} Co-supervised Kritarth Anand {\itshape (IIT Delhi/INRIA Sophia Antipolis)} \\
+% \notes{2013} Co-supervised Arunim Samat {\itshape (IIT Delhi)}
+
+\customsection{Scholarships \amper Awards}
+\noindent
+\notes{Aug 2010}PhD fellowship (\textit{Allocation de Recherche}) by the French ministry for 3 years of PhD studies. \\
+\notes{Aug 2009}Scholarship of Excellence (\textit{Bourse d'Excellence}) by ENSIMAG for one year of Master's studies. \\
+\notes{May 2007}Scholarship for 12 week research internship `ODCSSS-07' in Dublin by Science Foundation of Ireland. \\
+\notes{Jun 2005}All India Rank 54 in IIT-JEE 2005 (entrance examination for Indian Institutes of Technology) amongst nearly 300,000 aspirants.
+
+% \customsection{Major Curriculum Projects}
+% \noindent
+% \notes{Jan 2010}3D Air Hockey with stereo vision and hand tracking (\textit{Course: Virtual Reality}) \\
+% \notes{Apr 2009}Light Field Rendering using CUDA on GPU (\textit{Course: Parallel Programming}) \\
+% \notes{Nov 2008}Ocean Simulation with Fast Fourier Transform on GPU (\textit{Course: Advanced Graphics}) \\
+% \notes{Apr 2008}Content-based Search in Audio Files \\
+% \notes{Apr 2008}Modeling Tool for Rendering Fractal Terrains (\textit{Course: Computer Graphics}) \\
+% \notes{Apr 2008}Multi-threaded Secure Network File System with Encryption (\textit{Course: Operating Systems}) \\
+% \notes{Jan 2008}Software Rasterizer for Viewing 3D Models (\textit{Course: Computer Graphics}) \\
+% \notes{Apr 2007}Star Topology of Ports using VHDL on XILINX FPGA (\textit{Course: Digital Hardware Design})
+
+\customsection{Technical Skills}
+\noindent
+C++, {\scshape Matlab}, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash, Vim, Visual Studio
+
+\customsection{References}
+Available on request.
+% Dr. George Drettakis\\
+% Group Leader ({\scshape Reves})\\
+% Senior Researcher, INRIA Sophia Antipolis, France\\
+% {\scshape email:} \href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr}\\
+% {\scshape url:} \href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/}\\[0.36cm]
+% %
+% Prof. Olga Sorkine-Hornung\\
+% Group Leader (Interactive Geometry Lab)\\
+% Assisstant Professor, ETH Zurich, Switzerland\\
+% {\scshape email:} \href{mailto:sorkine@inf.ethz.ch}{sorkine@inf.ethz.ch}\\
+% {\scshape url:} \href{http://igl.ethz.ch/people/sorkine/}{http://igl.ethz.ch/people/sorkine/}
+\end{document}

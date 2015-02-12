@@ -21,7 +21,7 @@
 \definecolor{LightGray}{rgb}{0.65,0.65,0.65}
 \definecolor{LightBlue}{rgb}{0.5,0.5,1.0}
 \definecolor{Blue}{rgb}{0.0,0.0,1.0}
-\newcommand{\amper}{{\itshape\&}~}
+\newcommand{\amper}{{\scshape\&}~}
 
 % ---- HEADER/FOOTER
 \usepackage{fancyhdr}
@@ -77,42 +77,40 @@ Page~\thepage~of~\pageref{LastPage}}
 %
 \customsection{Research Interests}
 \noindent
-\notes{$\bullet$}Image-based rendering \\
-\notes{$\bullet$}Image warping \\
-\notes{$\bullet$}Computational photography \\
-\notes{$\bullet$}GPU acceleration of image processing algorithms \\
-\notes{$\bullet$}Multi-view stereo
+\begin{tabular}{lll}
+    Image-based rendering & Multi-view stereo & Image warping \\
+    Computational photography & GPU accelerated image processing & \\
+\end{tabular}
 
 \customsection{Current}
 \noindent
-\notes{2014-}\heading{Postdoctoral Associate, {\itshape Massachusetts Institute of Technology, MA, USA}}
-\hfill{\itshape (Adviser: Prof. Fredo Durand)}
+\notes{2014-}\heading{Postdoctoral Associate, {\itshape Massachusetts Institute of Technology, Cambridge MA, USA}} \\
+{\scshape Advisor:} Prof. Fredo Durand
 %
 \customsection{Education}
 \noindent
-\notes{2010-2014}\heading{\textbf{Ph.D} in Computer Science, {\itshape INRIA Sophia Antipolis, France}}
-\hfill{\itshape (Adviser: Dr. George Drettakis)} \\
-{\scshape Thesis: Algorithms \amper Perceptual Analysis for Interactive Free Viewpoint Image-Based Navigation.}
-\\[0.18cm]
+\notes{2010-2014}\heading{\textbf{Ph.D} in Computer Science, {\itshape INRIA Sophia Antipolis, France}} \\
+{\scshape Advisor:} Dr. George Drettakis \\
+{\scshape Thesis:} Algorithms \amper Perceptual Analysis for Interactive Free Viewpoint Image-Based Navigation
+\\[0.2cm]
 %
-\notes{2009-2010}\heading{\textbf{M.Sc} in Computer Science, {\itshape ENSIMAG \amper INRIA Sophia Antipolis, France}}\\[0.18cm]
+\notes{2009-2010}\heading{\textbf{M.Sc} in Computer Science, {\itshape ENSIMAG, Grenoble, France}} \\[0.2cm]
 %
-\notes{2005-2009}\heading{\textbf{B.Tech} in Computer Science, {\itshape Indian Institute of Technology Delhi, India}}
-\hfill{\itshape (Adviser: Dr. Subodh Kumar)} \\
-{\scshape Thesis: Real time traffic simulation.} Multi-agent simulation for chaotic city traffic which generalizes
-existing approaches which are restricted to lane-based driving.
+\notes{2005-2009}\heading{\textbf{B.Tech} in Computer Science, {\itshape Indian Institute of Technology Delhi, India}} \\
+{\scshape Advisor:} Dr. Subodh Kumar \\
+{\scshape Thesis:} Real time traffic simulation
 
 \customsection{Visiting Positions}
 \noindent
-\notes{Summer 2013}\heading{{\bfseries Visiting student}, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Adviser: Dr. Fredo Durand)}
+\notes{Summer 2013}\heading{{\bfseries Visiting student}, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Advisor: Dr. Fredo Durand)}
 \\Halide (\href{www.halide-lang.org}{halide-lang.org}) frontend for parallel execution of non-parallel algorithms like recursive filters.
 \\[0.18cm]
 %
-\notes{Summer 2012}\heading{{\bfseries Visiting student}, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Adviser: Dr. Ravi Ramamoorthi)}
+\notes{Summer 2012}\heading{{\bfseries Visiting student}, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Advisor: Dr. Ravi Ramamoorthi)}
 \\Procedural noise functions for synthesizing non-Gaussian textures.
 \\[0.18cm]
 %
-\notes{Feb-Jun 2010}\heading{{\bfseries Intern}, {\itshape INRIA Sophia Antipolis, France}} \hfill{\itshape (Adviser: Dr. George Drettakis)}
+\notes{Feb-Jun 2010}\heading{{\bfseries Intern}, {\itshape INRIA Sophia Antipolis, France}} \hfill{\itshape (Advisor: Dr. George Drettakis)}
 \\Image-based rendering for urban scenes.
 \\[0.18cm]
 %
@@ -123,14 +121,14 @@ existing approaches which are restricted to lane-based driving.
 %\notes{Winter 2008}\heading{{\bf Part-time intern}, {\itshape IndiraTech Inc., Nevada, USA}}\\
 %Java web-app to facilitate Federal and State income tax payment.\\[0.18cm]
 %
-\notes{Summer 2007}\heading{{\bfseries Intern}, {\itshape Dublin City University, Ireland}} \hfill{\itshape (Adviser: Dr. Derek Molloy)}
+\notes{Summer 2007}\heading{{\bfseries Intern}, {\itshape Dublin City University, Ireland}} \hfill{\itshape (Advisor: Dr. Derek Molloy)}
 \\Memory exercises as 3D games and user studies to test effect of 3D user interfaces on human recall.
 
 \customsection{Publications}
 \noindent
 \notes{2015}
 \authors{S. Duchene, C. Riant, {\bfseries G. Chaurasia}, S. Popov, PY Laffont, J. Lopez-Moreno, A. Bousseau, G. Drettakis}
-\paper{Multi View Intrinsic Decomposition \& Relighting}
+\paper{Multi View Intrinsic Decomposition \amper Relighting}
 \journal{ACM Trans. Graph. (conditionally accepted)}
 \html{not yet available}
 \doi{not yet available}\\[0.18cm]
@@ -190,7 +188,7 @@ existing approaches which are restricted to lane-based driving.
 \html{http://www-sop.inria.fr/members/Gaurav.Chaurasia/wiki/doku.php/research:traffsim}
 \doi{http://dx.doi.org/10.1145/1924559.1924604}
 
-\customsection{Invited talks}
+\customsection{Talks}
 \noindent
 \notes{Jul 2013}\talk{Algorithms and Perception for Interactive Free-Viewpoint Image-Based Navigation}
 \journal{Microsoft Research Redmond (eXtreme Computing Group)} \href{http://research.microsoft.com/apps/video/dl.aspx?id=198331}{\scriptsize{[Talk]}} \\[0.18cm]
@@ -199,13 +197,19 @@ existing approaches which are restricted to lane-based driving.
 
 \customsection{Professional Activities}
 \noindent
-\notes{2015}Reviewer for \link{http://www.computer.org/web/tvcg}{IEEE Transactions on Visualization and Computer Graphics} \\
-\notes{2014}Reviewer for \link{http://tap.acm.org}{ACM Transations on Applied Perception}, \link{http://graphics.ewha.ac.kr/PG14/}{Pacific Graphics 2014} \\
-\notes{2013}Reviewer for \link{http://sa2013.siggraph.org/en/}{SIGGRAPH Asia 2013} \\
-\notes{2012}Reviewer for \link{http://www.springer.com/engineering/signals/journal/11760}{Journal of Signal, Image and Video Processing} \\
-\notes{2011}Reviewer for \link{http://s2012.siggraph.org}{SIGGRAPH 2012}, \link{http://www.eurographics2012.it}{Eurographics 2012}
+\notes{Journals}Reviewer for
+    \link{http://tap.acm.org}{ACM Transations on Applied Perception},
+    \link{http://www.computer.org/web/tvcg}{IEEE Transactions on Visualization and Computer Graphics},
+    \link{http://www.journals.elsevier.com/computers-and-graphics/}{Computers \amper Graphics},
+    \link{http://www.springer.com/engineering/signals/journal/11760}{Journal of Signal, Image and Video Processing} \\[0.18cm]
+\notes{Conferences}Reviewer for
+    \link{http://graphics.ewha.ac.kr/PG14/}{Pacific Graphics 2014},
+    \link{http://sa2013.siggraph.org/en/}{SIGGRAPH Asia 2013},
+    \link{http://s2012.siggraph.org}{SIGGRAPH 2012},
+    \link{http://www.eurographics2012.it}{Eurographics 2012}
 
-% \customsection{Supervision \amper Teaching}
+\customsection{Supervision \amper Teaching}
+\notes{2015} Teaching assisstant: course 6.815/6.865 Digital \& Computational Photography by Prof. Fredo Durand (MIT)
 % \notes{2013} Co-supervised Kritarth Anand {\itshape (IIT Delhi/INRIA Sophia Antipolis)} \\
 % \notes{2013} Co-supervised Arunim Samat {\itshape (IIT Delhi)}
 
@@ -233,15 +237,19 @@ C++, {\scshape Matlab}, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash
 
 \customsection{References}
 Available on request.
-% Dr. George Drettakis\\
-% Group Leader ({\scshape Reves})\\
-% Senior Researcher, INRIA Sophia Antipolis, France\\
-% {\scshape email:} \href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr}\\
-% {\scshape url:} \href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/}\\[0.36cm]
+% Dr. George Drettakis {\itshape (Senior Researcher, INRIA Sophia Antipolis, France)} \\
+% \href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr} |
+% \email: \href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/} \\[0.3cm]
 % %
-% Prof. Olga Sorkine-Hornung\\
-% Group Leader (Interactive Geometry Lab)\\
-% Assisstant Professor, ETH Zurich, Switzerland\\
-% {\scshape email:} \href{mailto:sorkine@inf.ethz.ch}{sorkine@inf.ethz.ch}\\
-% {\scshape url:} \href{http://igl.ethz.ch/people/sorkine/}{http://igl.ethz.ch/people/sorkine/}
+% Prof. Fredo Durand {\itshape (Professor, Massachusetts Institute of Technology, Cambridge MA, USA)} \\
+% \href{mailto:fredo@mit.edu}{fredo@mit.edu} |
+% \href{http://people.csail.mit.edu/fredo/}{http://people.csail.mit.edu/fredo/} \\[0.3cm]
+% %
+% Dr. Sylvain Paris {\itshape (Senior Researcher, Adobe Research, Cambridge MA, USA)} \\
+% \href{mailto:sparis@adobe.com}{sparis@adobe.com} |
+% \href{http://people.csail.mit.edu/sparis/}{http://people.csail.mit.edu/sparis/} \\[0.3cm]
+% %
+% Prof. Dr. Olga Sorkine-Hornung {\itshape (Associate Professor, ETH Zurich, Switzerland)} \\
+% \href{mailto:sorkine@inf.ethz.ch}{sorkine@inf.ethz.ch} |
+% \href{http://igl.ethz.ch/people/sorkine/}{http://igl.ethz.ch/people/sorkine/}
 \end{document}

@@ -68,6 +68,8 @@ Page~\thepage~of~\pageref{LastPage}}
 ]{hyperref}
 \hypersetup{filecolor=Blue,urlcolor=Blue,linkcolor=Gray,citecolor=Black}
 
+\usepackage{ifthen}
+
 % ----- DOCUMENT
 \begin{document}
 \begin{center}{\sffamily\bfseries\color{Black}\Huge Gaurav Chaurasia}\vspace{0.1cm}\hrule\end{center}
@@ -102,11 +104,11 @@ Page~\thepage~of~\pageref{LastPage}}
 
 \customsection{Visiting Positions}
 \noindent
-\notes{Summer 2013}\heading{{\bfseries Visiting student}, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Advisor: Dr. Fredo Durand)}
+\notes{Aug 2013}\heading{{\bfseries Visiting student}, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Advisor: Dr. Fredo Durand)}
 \\Halide (\href{www.halide-lang.org}{halide-lang.org}) frontend for parallel execution of non-parallel algorithms like recursive filters.
 \\[0.18cm]
 %
-\notes{Summer 2012}\heading{{\bfseries Visiting student}, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Advisor: Dr. Ravi Ramamoorthi)}
+\notes{Aug 2012}\heading{{\bfseries Visiting student}, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Advisor: Dr. Ravi Ramamoorthi)}
 \\Procedural noise functions for synthesizing non-Gaussian textures.
 \\[0.18cm]
 %
@@ -237,20 +239,24 @@ Page~\thepage~of~\pageref{LastPage}}
 C++, {\scshape Matlab}, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash, Vim, Visual Studio
 
 \customsection{References}
+\ifthenelse{\equal{0}{0}}
+{%
 Available on request.
-% Dr. George Drettakis {\itshape (Senior Researcher, INRIA Sophia Antipolis, France)} \\
-% \href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr} |
-% \href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/} \\[0.3cm]
-% %
-% Prof. Fredo Durand {\itshape (Professor, Massachusetts Institute of Technology, Cambridge MA, USA)} \\
-% \href{mailto:fredo@mit.edu}{fredo@mit.edu} |
-% \href{http://people.csail.mit.edu/fredo/}{http://people.csail.mit.edu/fredo/} \\[0.3cm]
-% %
-% Dr. Sylvain Paris {\itshape (Senior Researcher, Adobe Research, Cambridge MA, USA)} \\
-% \href{mailto:sparis@adobe.com}{sparis@adobe.com} |
-% \href{http://people.csail.mit.edu/sparis/}{http://people.csail.mit.edu/sparis/} \\[0.3cm]
+}{%
+Dr. George Drettakis {\itshape (Senior Researcher, INRIA Sophia Antipolis, France)} \\
+\href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr} |
+\href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/} \\[0.3cm]
+%
+Prof. Fredo Durand {\itshape (Professor, Massachusetts Institute of Technology, Cambridge MA, USA)} \\
+\href{mailto:fredo@mit.edu}{fredo@mit.edu} |
+\href{http://people.csail.mit.edu/fredo/}{http://people.csail.mit.edu/fredo/} \\[0.3cm]
+%
+Dr. Sylvain Paris {\itshape (Senior Researcher, Adobe Research, Cambridge MA, USA)} \\
+\href{mailto:sparis@adobe.com}{sparis@adobe.com} |
+\href{http://people.csail.mit.edu/sparis/}{http://people.csail.mit.edu/sparis/} \\[0.3cm]
 %
 % Prof. Dr. Olga Sorkine-Hornung {\itshape (Associate Professor, ETH Zurich, Switzerland)} \\
 % \href{mailto:sorkine@inf.ethz.ch}{sorkine@inf.ethz.ch} |
 % \href{http://igl.ethz.ch/people/sorkine/}{http://igl.ethz.ch/people/sorkine/}
+}
 \end{document}

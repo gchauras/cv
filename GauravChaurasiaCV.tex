@@ -14,9 +14,8 @@
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
-% \setmainfont[Ligatures={Common}]{Minion Pro}
 \setmainfont[Ligatures={Common}]{Linux Libertine}
-\setsansfont[Ligatures={Common}]{Myriad Pro}
+\setsansfont[Ligatures={Common}]{Linux Libertine}
 \definecolor{Gray}{rgb}{0.45,0.45,0.45}
 \definecolor{LightGray}{rgb}{0.65,0.65,0.65}
 \definecolor{LightBlue}{rgb}{0.5,0.5,1.0}
@@ -36,6 +35,13 @@ Last updated: \today\- •\-
 Typeset in \href{http://nitens.org/taraborelli/cvtex}{\color{LightBlue}\XeTeX}\hfill
 Page~\thepage~of~\pageref{LastPage}}
 
+% ----- HEADINGS
+\usepackage{sectsty}
+\usepackage[normalem]{ulem}
+\sectionfont{\sffamily\large}
+\subsectionfont{\sffamily\normalsize}
+\subsubsectionfont{\sffamily\upshape\normalsize}
+
 % ---- MARGIN
 \usepackage{marginnote}
 \newcommand{\notes}[1]{\marginnote{\color{Gray}\scriptsize #1}}
@@ -52,13 +58,6 @@ Page~\thepage~of~\pageref{LastPage}}
 \newcommand{\link}[2]{\href{#1}{{#2}}}
 \newcommand{\html}[1]{\href{#1}{\scriptsize\scshape{[www]}}}
 \newcommand{\doi}[1]{\href{#1}{\scriptsize\scshape{[doi]}}}
-
-% ----- HEADINGS
-\usepackage{sectsty}
-\usepackage[normalem]{ulem}
-\sectionfont{\sffamily\mdseries\bfseries\large}
-\subsectionfont{\sffamily\mdseries\normalsize}
-\subsubsectionfont{\sffamily\mdseries\upshape\normalsize}
 
 % ----- PDF SETUP
 \usepackage[bookmarks, colorlinks, breaklinks,
@@ -129,7 +128,7 @@ Page~\thepage~of~\pageref{LastPage}}
 \authors{{\bfseries G. Chaurasia}, J. Ragan-Kelley, S. Paris, G. Drettakis, F. Durand}
 \paper{Compiling High Performance Recursive Filters}
 \journal{High Performance Graphics}
-\html{http://people.csail.mit.edu/gchauras/research/pubs/recfilter/}
+\html{https://mit-gfx.github.io/recfilter/}
 % \doi{not yet available}
 \\[0.18cm]
 %

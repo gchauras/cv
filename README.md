@@ -1,12 +1,5 @@
-cv
-==
-
 Xelatex based CV
-    - XeLateX
-    - Fonts [Myriad Pro](http://www.cufonfonts.com/en/font/492/myriad-pro), [Linux Libertine](http://www.dafont.com/linux-libertine.font)
+================
 
-## Notes
-- Fonts sourced from Adobe Creative Suite in original drafts
-- XeLateX which comes bundled with the latest release of [texlive](http://www.tug.org/texlive/) (2012 or above)
-
-
+- XeLateX (bundled with the 2012 or above release of [texlive](http://www.tug.org/texlive/))
+- [EB Garamond](https://github.com/georgd/eb-garamond) font (many thanks for George for open source Garamand variant)

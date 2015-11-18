@@ -14,8 +14,10 @@
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Ligatures={Common}]{Linux Libertine}
-\setsansfont[Ligatures={Common}]{Linux Libertine}
+% \setmainfont[Ligatures={Common}]{EB Garamond}
+% \setsansfont[Ligatures={Common}]{EB Garamond}
+\setmainfont{EB Garamond}
+\setsansfont{EB Garamond}
 \definecolor{Gray}{rgb}{0.45,0.45,0.45}
 \definecolor{LightGray}{rgb}{0.65,0.65,0.65}
 \definecolor{LightBlue}{rgb}{0.5,0.5,1.0}
@@ -38,14 +40,14 @@ Page~\thepage~of~\pageref{LastPage}}
 % ----- HEADINGS
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
-\sectionfont{\sffamily\large}
-\subsectionfont{\sffamily\normalsize}
-\subsubsectionfont{\sffamily\upshape\normalsize}
+\sectionfont{\color{BrickRed}\sffamily\large}
+\subsectionfont{\color{BrickRed}\sffamily\normalsize}
+\subsubsectionfont{\color{BrickRed}\sffamily\upshape\normalsize}
 
 % ---- MARGIN
 \usepackage{marginnote}
 \newcommand{\notes}[1]{\marginnote{\color{Gray}\scriptsize #1}}
-\newcommand{\customsection}[1]{\section*{#1\vspace{0.1cm}\hrule\vspace{-0.2cm}}}
+\newcommand{\customsection}[1]{\section*{#1}\vspace{-0.2cm}\hrule\vspace{0.1cm}}
 \renewcommand*{\raggedrightmarginnote}{}
 \reversemarginpar
 
@@ -71,7 +73,7 @@ Page~\thepage~of~\pageref{LastPage}}
 
 % ----- DOCUMENT
 \begin{document}
-\begin{center}{\sffamily\bfseries\color{Black}\Huge Gaurav Chaurasia}\vspace{0.1cm}\hrule\end{center}
+\begin{center}{\sffamily\bfseries\color{BrickRed}\Huge Gaurav Chaurasia}\vspace{0.1cm}\hrule\end{center}
 \vspace{-0.2cm}{\scshape\color{Gray}email}: \href{mailto:gchauras@mit.edu}{gchauras@mit.edu}
 \hfill
 {\scshape\color{Gray}url}: \href{http://people.csail.mit.edu/gchauras/}{http://people.csail.mit.edu/gchauras/}
@@ -80,7 +82,7 @@ Page~\thepage~of~\pageref{LastPage}}
 \noindent
 Image-based rendering, 3D reconstruction, image warping, computational photography, GPU accelerated image processing
 
-\customsection{Current}
+\customsection{Experience}
 \noindent
 \notes{2015-}\heading{Postdoctoral Associate, {\itshape Disney Research Zurich, Switzerland}} \\
 {\scshape Advisor:} Prof. Paul Beardsley
@@ -214,6 +216,7 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 \customsection{Professional Activities}
 \noindent
 \notes{Journals}Reviewer for
+    \link{http://www.signalprocessingsociety.org/publications/periodicals/letters/}{IEEE Signal Processing Letters 2015},
     \link{http://www.journals.elsevier.com/computers-and-graphics/}{Computers \amper Graphics 2015},
     \link{http://www.computer.org/web/tvcg}{IEEE Transactions on Visualization and Computer Graphics 2015},
     \link{http://tap.acm.org}{ACM Transactions on Applied Perception 2014},

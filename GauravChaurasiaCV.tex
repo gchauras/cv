@@ -6,7 +6,7 @@
 
 % ---- DOCUMENT LAYOUT
 \usepackage{geometry}
-\geometry{a4paper,textwidth=5.9in,textheight=9.0in,marginparsep=7pt,marginparwidth=.8in}
+\geometry{a4paper,textwidth=5.9in,textheight=9.2in,marginparsep=7pt,marginparwidth=.8in}
 \setlength\parindent{0in}
 
 % ---- FONTS
@@ -14,8 +14,6 @@
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
-% \setmainfont[Ligatures={Common}]{EB Garamond}
-% \setsansfont[Ligatures={Common}]{EB Garamond}
 \setmainfont{EB Garamond}
 \setsansfont{EB Garamond}
 \definecolor{Gray}{rgb}{0.45,0.45,0.45}
@@ -33,8 +31,7 @@
 \renewcommand\footrulewidth{0pt}
 \fancyhf{}
 \fancyfoot[L]{\scriptsize\color{Gray}
-Last updated: \today\- •\-
-Typeset in \href{http://nitens.org/taraborelli/cvtex}{\color{LightBlue}\XeTeX}\hfill
+Last updated: \today~$\bullet$~Typeset in \href{http://nitens.org/taraborelli/cvtex}{\color{LightBlue}\XeTeX}\hfill
 Page~\thepage~of~\pageref{LastPage}}
 
 % ----- HEADINGS
@@ -42,24 +39,27 @@ Page~\thepage~of~\pageref{LastPage}}
 \usepackage[normalem]{ulem}
 \sectionfont{\color{BrickRed}\sffamily\large}
 \subsectionfont{\color{BrickRed}\sffamily\normalsize}
-\subsubsectionfont{\color{BrickRed}\sffamily\upshape\normalsize}
+\subsubsectionfont{\color{BrickRed}\sffamily\normalsize}
 
 % ---- MARGIN
 \usepackage{marginnote}
-\newcommand{\notes}[1]{\marginnote{\color{Gray}\scriptsize #1}}
+\newcommand{\notes}[1]{\marginnote{\color{Gray}\small #1}}
 \newcommand{\customsection}[1]{\section*{#1}\vspace{-0.2cm}\hrule\vspace{0.1cm}}
 \renewcommand*{\raggedrightmarginnote}{}
 \reversemarginpar
 
 % ----- PUBLICATIONS
-\newcommand{\heading}[1]{{\bfseries\color{Black}#1}}
-\newcommand{\paper}[1]{{``#1'',~}}
+\newcommand{\jobtitle}[1]{{\color{Black}#1}}
+\newcommand{\emphasize}[1]{\underline{#1}}
+\newcommand{\paper}[1]{{#1,~}}
 \newcommand{\talk}[1]{{#1,~}}
 \newcommand{\authors}[1]{{#1.~}}
-\newcommand{\journal}[1]{\emph{#1}.~}
-\newcommand{\link}[2]{\href{#1}{{#2}}}
-\newcommand{\html}[1]{\href{#1}{\scriptsize\scshape{[www]}}}
-\newcommand{\doi}[1]{\href{#1}{\scriptsize\scshape{[doi]}}}
+\newcommand{\journal}[1]{{\itshape #1}.~}
+\newcommand{\link}[2]{\href{#1}{{#2}}}                        % link, display_text
+\newcommand{\html}[1]{\link{#1}{{\scriptsize\scshape[www]}}}
+\newcommand{\doi}[1]{\link{#1}{{\scriptsize\scshape[doi]}}}
+\newcommand{\jreview}[3]{#2\dotfill#1} % {\link{#3}{#2}\dotfill#1}
+\newcommand{\creview}[2]{#2\dotfill#1}
 
 % ----- PDF SETUP
 \usepackage[bookmarks, colorlinks, breaklinks,
@@ -79,56 +79,51 @@ Page~\thepage~of~\pageref{LastPage}}
 {\scshape\color{Gray}url}: \href{http://people.csail.mit.edu/gchauras/}{http://people.csail.mit.edu/gchauras/}
 %
 \customsection{Research Interests}
-\noindent
 Image-based rendering, 3D reconstruction, image warping, computational photography, GPU accelerated image processing
 
 \customsection{Experience}
-\noindent
-\notes{2015-}\heading{Postdoctoral Associate, {\itshape Disney Research Zurich, Switzerland}} \\
+\notes{2015-}\jobtitle{Postdoctoral Associate, {\itshape Disney Research Zurich, Switzerland}} \\
 Computer vision group
 \\[0.2cm]
 %
-\notes{2014-2015}\heading{Postdoctoral Associate, {\itshape Massachusetts Institute of Technology, Cambridge MA, USA}} \\
+\notes{2014-2015}\jobtitle{Postdoctoral Associate, {\itshape Massachusetts Institute of Technology, Cambridge MA, USA}} \\
 {\scshape Advisor:} Prof. Fredo Durand
 %
 \customsection{Education}
-\noindent
-\notes{2010-2014}\heading{\textbf{Ph.D} in Computer Science, {\itshape INRIA Sophia Antipolis, France}} \\
+\notes{2010-2014}\jobtitle{Ph.D in Computer Science, {\itshape INRIA Sophia Antipolis, France}} \\
 {\scshape Advisor:} Dr. George Drettakis \\
 {\scshape Thesis:} Algorithms \amper perceptual analysis for interactive free viewpoint image-based navigation
 \\[0.2cm]
 %
-\notes{2009-2010}\heading{\textbf{M.Sc} in Computer Science, {\itshape ENSIMAG, Grenoble, France}} \\[0.2cm]
+\notes{2009-2010}\jobtitle{M.Sc in Computer Science, {\itshape ENSIMAG, Grenoble, France}} \\[0.2cm]
 %
-\notes{2005-2009}\heading{\textbf{B.Tech} in Computer Science, {\itshape Indian Institute of Technology Delhi, India}} \\
+\notes{2005-2009}\jobtitle{B.Tech in Computer Science, {\itshape Indian Institute of Technology Delhi, India}} \\
 {\scshape Advisor:} Prof. Subodh Kumar \\
 {\scshape Thesis:} Real time traffic simulation
 
 \customsection{Visiting Positions}
-\noindent
-\notes{Aug 2013}\heading{{\bfseries Visiting student}, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Advisor: Dr. Fredo Durand)}
+\notes{Aug 2013}\jobtitle{Visiting student, {\itshape Massachusetts Institute of Technology, MA, USA}}\hfill{\itshape (Advisor: Dr. Fredo Durand)}
 \\Parallel execution of non-parallel recursive or IIR filters.
 \\[0.18cm]
 %
-\notes{Aug 2012}\heading{{\bfseries Visiting student}, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Advisor: Dr. Ravi Ramamoorthi)}
+\notes{Aug 2012}\jobtitle{Visiting student, {\itshape University of California Berkeley, CA, USA}}\hfill{\itshape (Advisor: Dr. Ravi Ramamoorthi)}
 \\Procedural noise functions for synthesizing non-Gaussian textures.
 \\[0.18cm]
 %
-\notes{Feb-Jun 2010}\heading{{\bfseries Intern}, {\itshape INRIA Sophia Antipolis, France}} \hfill{\itshape (Advisor: Dr. George Drettakis)}
+\notes{Feb-Jun 2010}\jobtitle{Intern, {\itshape INRIA Sophia Antipolis, France}} \hfill{\itshape (Advisor: Dr. George Drettakis)}
 \\Image-based rendering for urban scenes.
 \\[0.18cm]
 %
-\notes{Summer 2008}\heading{{\bfseries Intern}, {\itshape NVIDIA Bangalore, India}}
+\notes{Summer 2008}\jobtitle{Intern, {\itshape NVIDIA Bangalore, India}}
 \\OpenGL-ES extensions for GPU driver for embedded systems, OpenGL-ES 2.0 conformance test suite bugs.
 \\[0.18cm]
 %
-\notes{Summer 2007}\heading{{\bfseries Intern}, {\itshape Dublin City University, Ireland}} \hfill{\itshape (Advisor: Dr. Derek Molloy)}
+\notes{Summer 2007}\jobtitle{Intern, {\itshape Dublin City University, Ireland}} \hfill{\itshape (Advisor: Dr. Derek Molloy)}
 \\Memory exercises as 3D games and user studies to test effect of 3D user interfaces on human recall.
 
 \customsection{Publications}
-\noindent
 \notes{2016}
-\authors{ST Digumarti, A. Taneja, A. Thomas, {\bfseries G. Chaurasia}, R. Siegwart, P. Beardsley}
+\authors{ST Digumarti, A. Taneja, A. Thomas, \emphasize{G. Chaurasia}, R. Siegwart, P. Beardsley}
 \paper{Underwater 3D capture using a low-cost commercial depth camera}
 \journal{WACV (to appear)}
 \html{}
@@ -136,7 +131,7 @@ Computer vision group
 \\[0.18cm]
 %
 \notes{2015}
-\authors{M. Gharbi, Y. Shih, {\bfseries G. Chaurasia}, J. Ragan-Kelley, S. Paris, F. Durand}
+\authors{M. Gharbi, Y. Shih, \emphasize{G. Chaurasia}, J. Ragan-Kelley, S. Paris, F. Durand}
 \paper{Transform recipes for efficient cloud photo enhancement}
 \journal{ACM Trans. Graph. 34(6) (SIGGRAPH Asia 2015)}
 \html{http://people.csail.mit.edu/gharbi/xform_recipe/}
@@ -144,15 +139,15 @@ Computer vision group
 \\[0.18cm]
 %
 \notes{2015}
-\authors{S. Duch\^{e}ne, C. Riant, {\bfseries G. Chaurasia}, J. Lopez-Moreno, PY Laffont, S. Popov, A. Bousseau, G. Drettakis}
+\authors{S. Duch\^{e}ne, C. Riant, \emphasize{G. Chaurasia}, J. Lopez-Moreno, PY Laffont, S. Popov, A. Bousseau, G. Drettakis}
 \paper{Multi view intrinsic decomposition \amper relighting}
-\journal{ACM Trans. Graph. 34(5) (to be presented at SIGGRAPH 2016)}
+\journal{ACM Trans. Graph. 34(5) (SIGGRAPH 2016)}
 \html{http://www-sop.inria.fr/reves/Basilic/2015/DRCLLPD15/}
 \doi{http://dx.doi.org/10.1145/2790060.2790063}
 \\[0.18cm]
 %
 \notes{2015}
-\authors{{\bfseries G. Chaurasia}, J. Ragan-Kelley, S. Paris, G. Drettakis, F. Durand}
+\authors{\emphasize{G. Chaurasia}, J. Ragan-Kelley, S. Paris, G. Drettakis, F. Durand}
 \paper{Compiling high performance recursive filters}
 \journal{High Performance Graphics}
 \html{https://mit-gfx.github.io/recfilter/}
@@ -160,95 +155,89 @@ Computer vision group
 \\[0.18cm]
 %
 \notes{2015}
-\authors{M. Benoit, R. Guerchouche, PD Petit, E. Chapoulie, V. Manera, {\bfseries G. Chaurasia}, G. Drettakis, P. Robert}
+\authors{M. Benoit, R. Guerchouche, PD Petit, E. Chapoulie, V. Manera, \emphasize{G. Chaurasia}, G. Drettakis, P. Robert}
 \paper{Is it possible to use highly realistic virtual reality in the elderly? A feasibility study with image-based rendering}
 \journal{Journal of Neuropsychiatric Disease and Treatment}
 \html{http://www.dovepress.com/articles.php?article_id=20707}
 \doi{http://dx.doi.org/10.2147/NDT.S73179}\\[0.18cm]
 %
 \notes{2014}
-\authors{E. Chapoulie, R. Guerchouche, PD Petit, {\bfseries G. Chaurasia}, P. Robert, G. Drettakis}
+\authors{E. Chapoulie, R. Guerchouche, PD Petit, \emphasize{G. Chaurasia}, P. Robert, G. Drettakis}
 \paper{Reminiscence therapy using image-based rendering in VR}
 \journal{IEEE Virtual Reality}
 \html{http://www-sop.inria.fr/reves/Basilic/2014/CGPCRD14/}
 \doi{http://dx.doi.org/10.1109/VR.2014.6802049}\\[0.18cm]
 %
 \notes{2013}
-\authors{{\bfseries G. Chaurasia}, S. Duchene, O. Sorkine-Hornung, G. Drettakis}
+\authors{\emphasize{G. Chaurasia}, S. Duchene, O. Sorkine-Hornung, G. Drettakis}
 \paper{Depth synthesis and local warps for plausible image-based navigation}
 \journal{ACM Trans. Graph. 32(3) (presented at SIGGRAPH 2013)}
 \html{http://www-sop.inria.fr/reves/Basilic/2013/CDSD13/}
 \doi{http://dx.doi.org/10.1145/2487228.2487238}\\[0.18cm]
 %
 \notes{2013}
-\authors{P. Vangorp, C. Richardt, E.A. Cooper, {\bfseries G. Chaurasia}, M.S. Banks, G. Drettakis}
+\authors{P. Vangorp, C. Richardt, E.A. Cooper, \emphasize{G. Chaurasia}, M.S. Banks, G. Drettakis}
 \paper{Perception of perspective distortions in image-based rendering}
 \journal{ACM Trans. Graph. 32(4) (SIGGRAPH 2013)}
 \html{http://www-sop.inria.fr/reves/Basilic/2013/VRCCBD13/}
 \doi{http://dx.doi.org/10.1145/2461912.2461971} \\[0.18cm]
 %
 \notes{2011}
-\authors{{\bfseries G. Chaurasia}, O. Sorkine, G. Drettakis}
+\authors{\emphasize{G. Chaurasia}, O. Sorkine, G. Drettakis}
 \paper{Silhouette-aware warping for image-based rendering}
 \journal{Comput. Graph. Forum 30(4) (EGSR 2011)}
 \html{http://www-sop.inria.fr/reves/Basilic/2011/CSD11/}
 \doi{http://dx.doi.org/10.1111/j.1467-8659.2011.01981.x} \\[0.18cm]
 %
-\notes{2011}\authors{P. Vangorp, {\bfseries G. Chaurasia}, PY Laffont, R. Fleming, G. Drettakis}
+\notes{2011}\authors{P. Vangorp, \emphasize{G. Chaurasia}, PY Laffont, R. Fleming, G. Drettakis}
 \paper{Perception of visual artifacts in image-based rendering of fa{\c c}ades}
 \journal{Comput. Graph. Forum 30(4) (EGSR 2011)}
 \html{http://www-sop.inria.fr/reves/Basilic/2011/VCLFD11/}
 \doi{http://dx.doi.org/10.1111/j.1467-8659.2011.01983.x} \\[0.18cm]
 %
 \notes{2011}
-\authors{M. Cabral, P. Vangorp, {\bfseries G. Chaurasia}, E. Chapoulie, M. Hachet, G. Drettakis}
+\authors{M. Cabral, P. Vangorp, \emphasize{G. Chaurasia}, E. Chapoulie, M. Hachet, G. Drettakis}
 \paper{A multimode immersive conceptual design system for architectural modeling \amper lighting}
 \journal{IEEE Symposium on 3D User Interfaces (3DUI 2011)}
 \html{http://www-sop.inria.fr/reves/Basilic/2011/CVCCHD11/}
 \doi{http://dx.doi.org/10.1109/3DUI.2011.5759211} \\[0.18cm]
 %
 \notes{2010}
-\authors{{\bfseries G. Chaurasia}, B.R. Selvamani, N. Gupta, S. Kumar}
+\authors{\emphasize{G. Chaurasia}, B.R. Selvamani, N. Gupta, S. Kumar}
 \paper{Virtual chaotic traffic simulation}
 \journal{Indian Conference on Computer Vision, Graphics \amper Image Processing (ICVGIP 2010)}
 \html{http://people.csail.mit.edu/gchauras/research/pubs/traffsim/}
 \doi{http://dx.doi.org/10.1145/1924559.1924604}
 
 \customsection{Professional Activities}
-\noindent
 \notes{Journal reviews}
-    \link{http://link.springer.com/journal/371}{Visual Comput. 2016},
-    \link{http://tog.acm.org/}{ACM Trans. Graph. 2016},
-    \link{http://onlinelibrary.wiley.com/journal/10.1111/\%28ISSN\%291467-8659}{Comput. Graph. Forum 2015},
-    \link{http://www.signalprocessingsociety.org/publications/periodicals/letters/}{IEEE Signal Process. Lett. 2015},
-    \link{http://www.journals.elsevier.com/computers-and-graphics/}{Comput. \amper Graph. 2015},
-    \link{http://www.computer.org/web/tvcg}{IEEE Trans. Visual. Comput. Graph. 2015},
-    \link{http://tap.acm.org}{ACM Trans. Appl. Percept. 2014},
-    \link{http://www.springer.com/engineering/signals/journal/11760}{J. Signal Image \amper Video Process. 2013} \\[0.18cm]
+    \jreview{2016}{ACM Transactions on Graphics}{http://tog.acm.org/} \\
+    \jreview{2014}{ACM Transactions on Applied Perception}{http://tap.acm.org} \\
+    \jreview{2015}{Computer Graphics Forum}{http://onlinelibrary.wiley.com/journal/10.1111/\%28ISSN\%291467-8659} \\
+    \jreview{2015}{IEEE Transactions on Visualization and Computer Graphics}{http://www.computer.org/web/tvcg} \\
+    \jreview{2016}{The Visual Computer}{http://link.springer.com/journal/371} \\
+    \jreview{2015}{Computers \amper Graphics}{http://www.journals.elsevier.com/computers-and-graphics/} \\
+    \jreview{2015}{IEEE Signal Processing Letters}{http://www.signalprocessingsociety.org/publications/periodicals/letters/} \\
+    \jreview{2013}{Journal of Signal Image \amper Video Processing}{http://www.springer.com/engineering/signals/journal/11760} \\[0.18cm]
 \notes{Conference reviews}
-    \link{http://s2016.siggraph.org/}{SIGGRAPH 2016},
-    \link{http://eurographics2016.pt/}{Eurographics 2016},
-    \link{http://cg.cs.tsinghua.edu.cn/pg2015/}{Pacific Graphics 2015},
-    \link{http://graphics.ewha.ac.kr/PG14/}{Pacific Graphics 2014},
-    \link{http://sa2013.siggraph.org/en/}{SIGGRAPH Asia 2013},
-    \link{http://s2012.siggraph.org}{SIGGRAPH 2012},
-    \link{http://www.eurographics2012.it}{Eurographics 2012}
+    \creview{2012,2016}{SIGGRAPH} \\
+    \creview{2013}{SIGGRAPH Asia} \\
+    \creview{2012,2016}{Eurographics} \\
+    \creview{2014,2015}{Pacific Graphics}
 
 \customsection{Supervision \amper Teaching}
-\notes{Spring 2016}TA: Advanced Methods in Computer Graphics Seminar 252-5704-00L, ETH Zurich \html{https://graphics.ethz.ch/teaching/seminarSS16/home.php} \\
-\notes{Spring 2015}TA: Digital \& Computational Photography 6.815/6.865, MIT \html{https://stellar.mit.edu/S/course/6/sp15/6.815/index.html}\\
-\notes{2013}Co-supervised Kritarth Anand {\itshape (undergraduate thesis, IIT Delhi/INRIA Sophia Antipolis)} \\
-\notes{2013}Co-supervised Arunim Samat {\itshape (undergraduate thesis, IIT Delhi/INRIA Sophia Antipolis)}
+\notes{Spring 2016}TA: Advanced Methods in Computer Graphics Seminar \link{https://graphics.ethz.ch/teaching/seminarSS16/home.php}{252-5704-00L} \dotfill ETH Zurich \\
+\notes{Spring 2015}TA: Digital \& Computational Photography \link{https://stellar.mit.edu/S/course/6/sp15/6.815/index.html}{6.815/6.865} \dotfill MIT \\
+\notes{Spring 2013}Co-supervised Kritarth Anand (undergraduate thesis) \dotfill INRIA Sophia Antipolis/IIT Delhi \\
+\notes{Spring 2013}Co-supervised Arunim Samat (undergraduate thesis) \dotfill INRIA Sophia Antipolis/IIT Delhi \\
 
 \customsection{Scholarships \amper Awards}
-\noindent
 \notes{Aug 2010}PhD fellowship (\textit{Allocation de Recherche}) by the French ministry for PhD studies. \\
 \notes{Aug 2009}Scholarship of Excellence (\textit{Bourse d'Excellence}) by ENSIMAG for Master's studies. \\
 \notes{May 2007}Scholarship for 12 week research internship `ODCSSS-07' in Dublin by Science Foundation of Ireland. \\
 \notes{Jun 2005}All India Rank 54 in IIT-JEE 2005 (entrance examination for Indian Institutes of Technology) amongst nearly 300,000 aspirants.
 
 % \customsection{Major Curriculum Projects}
-% \noindent
 % \notes{Jan 2010}3D Air Hockey with stereo vision and hand tracking (\textit{Course: Virtual Reality}) \\
 % \notes{Apr 2009}Light Field Rendering using CUDA on GPU (\textit{Course: Parallel Programming}) \\
 % \notes{Nov 2008}Ocean Simulation with Fast Fourier Transform on GPU (\textit{Course: Advanced Graphics}) \\
@@ -259,7 +248,6 @@ Computer vision group
 % \notes{Apr 2007}Star Topology of Ports using VHDL on XILINX FPGA (\textit{Course: Digital Hardware Design})
 
 \customsection{Technical Skills}
-\noindent
 C++, {\scshape Matlab}, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash, Vim, Visual Studio
 
 \customsection{References}

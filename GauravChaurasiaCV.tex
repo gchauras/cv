@@ -20,8 +20,8 @@
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont{EB Garamond}
-\setsansfont{Lato}
+\setmainfont{Adobe Garamond Pro}
+\setsansfont{Adobe Garamond Pro}
 \definecolor{Gray}{rgb}{0.45,0.45,0.45}
 \definecolor{LightGray}{rgb}{0.65,0.65,0.65}
 \definecolor{LightBlue}{rgb}{0.5,0.5,1.0}
@@ -43,8 +43,8 @@
 % ----- HEADINGS
 \usepackage{sectsty}
 \usepackage[normalem]{ulem}
-\sectionfont{\color{BrickRed}\sffamily\large}
-\subsectionfont{\color{BrickRed}\sffamily\normalsize}
+\sectionfont      {\color{BrickRed}\sffamily\large}
+\subsectionfont   {\color{BrickRed}\sffamily\normalsize}
 \subsubsectionfont{\color{BrickRed}\sffamily\normalsize}
 
 % ---- MARGIN
@@ -57,6 +57,7 @@
 % ----- PUBLICATIONS
 \newcommand{\jobtitle}[1]{{\bfseries #1}}
 \newcommand{\organization}[1]{{\scshape #1}}
+\newcommand{\location}[1]{#1}
 \newcommand{\advisor}[1]{{\itshape Advisor: #1}}
 \newcommand{\jobdesc}[1]{{#1}}
 \newcommand{\thesis}[1]{{\scshape Thesis:} #1}
@@ -70,11 +71,12 @@
 \newcommand{\jreview}[3]{#2\dotfill#1} % {\href{#3}{#2}\dotfill#1}
 \newcommand{\creview}[2]{#2\dotfill#1}
 
-\newcommand{\position}[5]{
+\newcommand{\position}[6]{
     \notes{#1}
     \jobtitle{#2} at \organization{#3}
-    \ifempty{#4}{}{\\ \advisor{#4}}
-    \ifempty{#5}{}{\\ \jobdesc{#5}}
+    \ifempty{#4}{}{(\location{#4})}
+    \ifempty{#5}{}{\\ \advisor{#5}}
+    \ifempty{#6}{}{\\ \jobdesc{#6}}
 }
 
 \newcommand{\publication}[6]{
@@ -86,7 +88,17 @@
     \ifempty{#6}{}{\doi{#6}}
 }
 
-\newenvironment{cvitems}{\begin{list}{}{\itemsep=0.18cm,\leftmargin=0cm,\labelwidth=0cm}}{\end{list}}
+\let\origdescription\description
+\renewenvironment{description}{
+    \setlength{\leftmargini}{0cm}
+    \origdescription
+    \setlength{\itemindent}{0cm}
+    \setlength{\labelsep}{0cm}
+    %\setlength{\itemsep}{0.18cm}
+}
+{\endlist}
+
+\newenvironment{cvitems}{\begin{description}}{\end{description}}
 
 % ----- PDF SETUP
 \usepackage[bookmarks, colorlinks, breaklinks,
@@ -115,14 +127,16 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 \item \position
 {2015-}
 {Postdoctoral Associate}
-{Disney Research Zurich, Switzerland}
+{Disney Research Zurich}
+{Switzerland}
 {}
 {Computer vision group}
 
 \item \position
 {2014-2015}
 {Postdoctoral Associate}
-{Massachusetts Institute of Technology, Cambridge MA, USA}
+{Massachusetts Institute of Technology}
+{Cambridge MA, USA}
 {Prof. Fredo Durand}
 {}
 \end{cvitems}
@@ -134,21 +148,24 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 \item \position
 {2010-2014}
 {Ph.D in Computer Science}
-{INRIA Sophia Antipolis, France}
+{INRIA Sophia Antipolis}
+{France}
 {Dr. George Drettakis}
 {\thesis{Algorithms \amper perceptual analysis for interactive free viewpoint image-based navigation}}
 
 \item \position
 {2009-2010}
 {M.Sc in Computer Science}
-{ENSIMAG, Grenoble, France}
+{ENSIMAG}
+{Grenoble, France}
 {}
 {}
 
 \item \position
 {2005-2009}
 {B.Tech in Computer Science}
-{Indian Institute of Technology Delhi, India}
+{Indian Institute of Technology Delhi}
+{India}
 {Prof. Subodh Kumar}
 {\thesis{Real time traffic simulation}}
 \end{cvitems}
@@ -160,34 +177,36 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 \item \position
 {Aug 2013}
 {Visiting student}
-{Massachusetts Institute of Technology, Cambridge MA, USA}
+{Massachusetts Institute of Technology}
+{Cambridge MA, USA}
 {Prof. Fredo Durand}
 {Parallel execution of non-parallel recursive filters.}
 
 \item \position
 {Aug 2012}
 {Visiting student}
-{University of California Berkeley, CA, USA}
+{University of California Berkeley}
+{Berkeley CA, USA}
 {Prof. Ravi Ramamoorthi}
 {Procedural noise functions for synthesizing non-Gaussian textures.}
 
 \item \position
 {Feb-Jun 2010}
 {Intern}
-{INRIA Sophia Antipolis, France}
+{INRIA Sophia Antipolis}{France}
 {Dr. George Drettakis}
 {Image-based rendering for urban scenes.}
 
 \item \position
 {Summer 2008}{Intern}
-{NVIDIA Bangalore, India}
+{NVIDIA}{Bangalore, India}
 {}
 {OpenGL-ES extensions for GPU driver for embedded systems, OpenGL-ES 2.0 conformance test suite bugs.}
 
 \item \position
 {Summer 2007}
 {Intern}
-{Dublin City University, Ireland}
+{Dublin City University}{Ireland}
 {Dr. Derek Molloy}
 {Memory exercises as 3D games and user studies to test effect of 3D user interfaces on human recall.}
 

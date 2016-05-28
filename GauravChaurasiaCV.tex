@@ -33,28 +33,26 @@
     UprightFont=*-Regular,
     ItalicFont=*-It,
     BoldFont=*-Bold,
-    BoldItalicFont=*-BoldIt
+    BoldItalicFont=*-BoldIt,
 ]{SourceSansPro}
 
-\newfontfamily\bodyfontlight[
+\setmainfont[
     Path=\@fontdir,
-    UprightFont=*-Light,
-    ItalicFont=*-LightIt,
-    BoldFont=*-Semibold,
-    BoldItalicFont=*-SemiboldIt
-]{SourceSansPro}
+    UprightFont=*12-Regular,
+    ItalicFont=*12-Italic,
+]{EBGaramond}
 
-\setmainfont{EB Garamond}
+\usepackage{fontawesome}
 
 \newcommand{\amper}{~\&~}
 
 % ---- FONT STYLES
-\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black}  \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}   \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}   \bfseries \texttt{#1}}}
-\newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black}  \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}   \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\marginstyle}       [1]{{\small      \color{Gray}   \upshape{#1}}}
+\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}  \bfseries \sansfont{#1}}}
+\newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black} \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\marginstyle}       [1]{{\small      \color{Gray}  #1}}
 
 % ---- HEADER/FOOTER
 \usepackage{fancyhdr}
@@ -74,6 +72,14 @@
 \newcommand{\cvsection}[1]{\vspace{0.2cm}\hrule\vspace{0.15cm}\sectionstyle{#1}}
 \renewcommand*{\raggedrightmarginnote}{}
 \reversemarginpar
+
+% ----- PDF SETUP
+\usepackage[bookmarks, colorlinks, breaklinks,
+	pdftitle={Gaurav Chaurasia CV},
+	pdfauthor={Gaurav Chaurasia},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}
+\hypersetup{filecolor=Gray,urlcolor=Gray,linkcolor=Gray,citecolor=Gray}
 
 % ----- PUBLICATIONS
 \newcommand{\organization}[1]{{\large\scshape #1}}
@@ -123,14 +129,10 @@
 }
 {\end{cvitems}}
 
-
-% ----- PDF SETUP
-\usepackage[bookmarks, colorlinks, breaklinks,
-	pdftitle={Gaurav Chaurasia CV},
-	pdfauthor={Gaurav Chaurasia},
-	pdfproducer={http://nitens.org/taraborelli/cvtex}
-]{hyperref}
-\hypersetup{filecolor=Gray,urlcolor=Gray,linkcolor=Gray,citecolor=Gray}
+\newcommand{\mailicon}{{\faEnvelope~~}}
+\newcommand{\homeicon}{{\faHome~~}}
+\newcommand{\www} [1]{{\href       {#1}{\color{Gray} \homeicon #1}}}
+\newcommand{\mail}[1]{{\href{mailto:#1}{\color{Gray} \mailicon #1}}}
 
 % ----- DOCUMENT
 \begin{document}
@@ -138,9 +140,7 @@
 \headerstyle{gaurav chaurasia} \\
 \headercontactstyle{disney research zurich, stampfenbachstrasse 48, zurich, switzerland} \\
 \headerurlstyle{
-    \href{mailto:gchauras@mit.edu}{gchauras@mit.edu} \quad\textbar\quad
-    \href{http://people.csail.mit.edu/gchauras/}{http://people.csail.mit.edu/gchauras/}
-    } \\
+    \mail{gchauras@mit.edu} \quad \www{http://people.csail.mit.edu/gchauras/}} \\
 \vspace{0.3cm}
 \end{center}
 
@@ -157,11 +157,11 @@
 \begin{cvitems}
 \item \position
 {2015-}
-{Postdoctoral Associate}
+{Postdoctoral Associate (Computer vision group)}
 {Disney Research Zurich}
-{Switzerland}
+{Zurich, Switzerland}
 {}
-{Computer vision group}
+{}
 
 \item \position
 {2014-2015}
@@ -179,8 +179,8 @@
 \item \position
 {2010-2014}
 {Ph.D in Computer Science}
-{INRIA Sophia Antipolis}
-{France}
+{Inria}
+{Sophia Antipolis, France}
 {Dr. George Drettakis}
 {\thesis{Algorithms \amper perceptual analysis for interactive free viewpoint image-based navigation}}
 
@@ -196,7 +196,7 @@
 {2005-2009}
 {B.Tech in Computer Science}
 {Indian Institute of Technology Delhi}
-{India}
+{New Delhi, India}
 {Prof. Subodh Kumar}
 {\thesis{Real time traffic simulation}}
 \end{cvitems}
@@ -224,20 +224,23 @@
 \item \position
 {Feb-Jun 2010}
 {Intern}
-{INRIA Sophia Antipolis}{France}
+{Inria}
+{Sophia Antipolis, France}
 {Dr. George Drettakis}
 {Image-based rendering for urban scenes.}
 
 \item \position
-{Summer 2008}{Intern}
-{NVIDIA}{Bangalore, India}
+{Summer 2008}
+{Intern (Embedded graphics group)}
+{Nvidia}{Bangalore, India}
 {}
 {OpenGL-ES extensions for GPU driver for embedded systems, OpenGL-ES 2.0 conformance test suite bugs.}
 
 \item \position
 {Summer 2007}
 {Intern}
-{Dublin City University}{Ireland}
+{Dublin City University}
+{Dublin, Ireland}
 {Dr. Derek Molloy}
 {Memory exercises as 3D games and user studies to test effect of 3D user interfaces on human recall.}
 \end{cvitems}
@@ -408,21 +411,21 @@
 
 \cvsection{references}
 \begin{cvitems}
-\ifthenelse{\equal{0}{0}}
+\ifthenelse{\equal{1}{0}}
 {%
 \item Available on request.
 }{%
-\item Dr. George Drettakis {\itshape (Senior Researcher, INRIA Sophia Antipolis, France)} \\
-\href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr} \quad\textbar\quad
-\href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/} \\[0.3cm]
+\item Dr. George Drettakis \\ {\itshape Directory of Researcher, INRIA Sophia Antipolis, France} \\
+\www{http://www-sop.inria.fr/members/George.Drettakis/} \quad
+\mail{george.drettakis@inria.fr}
 %
-\item Prof. Fredo Durand {\itshape (Professor, Massachusetts Institute of Technology, Cambridge MA, USA)} \\
-\href{mailto:fredo@mit.edu}{fredo@mit.edu} \quad\textbar\quad
-\href{http://people.csail.mit.edu/fredo/}{http://people.csail.mit.edu/fredo/} \\[0.3cm]
+\item Prof. Fredo Durand \\ {\itshape Professor, Massachusetts Institute of Technology, Cambridge MA, USA} \\
+\www{http://people.csail.mit.edu/fredo/} \quad
+\mail{fredo@mit.edu}
 %
-\item Dr. Sylvain Paris {\itshape (Senior Researcher, Adobe Research, Cambridge MA, USA)} \\
-\href{mailto:sparis@adobe.com}{sparis@adobe.com} \quad\textbar\quad
-\href{http://people.csail.mit.edu/sparis/}{http://people.csail.mit.edu/sparis/} \\[0.3cm]
+\item Dr. Sylvain Paris \\ {\itshape Senior Researcher, Adobe Research, Cambridge MA, USA} \\
+\www{http://people.csail.mit.edu/sparis/} \quad
+\mail{sparis@adobe.com}
 }
 \end{cvitems}
 

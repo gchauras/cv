@@ -1,7 +1,7 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 \usepackage{fontspec}
 
 % ---- CONDITIONALS
@@ -12,21 +12,47 @@
 
 % ---- DOCUMENT LAYOUT
 \usepackage{geometry}
-\geometry{a4paper,textwidth=5.9in,textheight=9.2in,marginparsep=7pt,marginparwidth=.8in}
+\geometry{a4paper,textwidth=5.3in,textheight=8.7in,marginparsep=7pt,marginparwidth=.8in}
 \setlength\parindent{0in}
 
-% ---- FONTS
+% ---- COLORS
 \usepackage[usenames,dvipsnames]{color}
+\definecolor{Black}{rgb}{0,0,0}
+\definecolor{Gray}{rgb}{0.45,0.45,0.45}
+\definecolor{Blue}{rgb}{0.0,0.0,1.0}
+
+% ---- FONTS
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Adobe Garamond Pro}
-\setsansfont{Adobe Garamond Pro}
-\definecolor{Gray}{rgb}{0.45,0.45,0.45}
-\definecolor{LightGray}{rgb}{0.65,0.65,0.65}
-\definecolor{LightBlue}{rgb}{0.5,0.5,1.0}
-\definecolor{Blue}{rgb}{0.0,0.0,1.0}
-\newcommand{\amper}{{\scshape\&}~}
+
+\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\fontdir
+\newfontfamily\sansfont[
+    Path=\@fontdir,
+    UprightFont=*-Regular,
+    ItalicFont=*-It,
+    BoldFont=*-Bold,
+    BoldItalicFont=*-BoldIt,
+]{SourceSansPro}
+
+\setmainfont[
+    Path=\@fontdir,
+    UprightFont=*12-Regular,
+    ItalicFont=*12-Italic,
+]{EBGaramond}
+
+\usepackage{fontawesome}
+
+\newcommand{\amper}{~\&~}
+
+% ---- FONT STYLES
+\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}  \bfseries \sansfont{#1}}}
+\newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black} \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\marginstyle}       [1]{{\small      \color{Gray}  #1}}
 
 % ---- HEADER/FOOTER
 \usepackage{fancyhdr}
@@ -36,46 +62,46 @@
 \renewcommand\headrulewidth{0pt}
 \renewcommand\footrulewidth{0pt}
 \fancyhf{}
-\fancyfoot[L]{\scriptsize\color{Gray}Last updated: \today}
-\fancyfoot[C]{\scriptsize\color{Gray}Typeset in \href{http://nitens.org/taraborelli/cvtex}{\color{LightBlue}\XeTeX}}
-\fancyfoot[R]{\scriptsize\color{Gray}Page~\thepage~of~\pageref{LastPage}}
-
-% ----- HEADINGS
-\usepackage{sectsty}
-\usepackage[normalem]{ulem}
-\sectionfont      {\color{BrickRed}\sffamily\large}
-\subsectionfont   {\color{BrickRed}\sffamily\normalsize}
-\subsubsectionfont{\color{BrickRed}\sffamily\normalsize}
+\fancyfoot[L]{\footerstyle{Last updated: \today}}
+\fancyfoot[C]{\footerstyle{Typeset in \XeTeX}}
+\fancyfoot[R]{\footerstyle{Page~\thepage~of~\pageref{LastPage}}}
 
 % ---- MARGIN
 \usepackage{marginnote}
-\newcommand{\notes}[1]{\marginnote{\color{Gray}\small #1}}
-\newcommand{\customsection}[1]{\section*{#1}\vspace{-0.2cm}\hrule\vspace{0.1cm}}
+\newcommand{\notes}[1]{\marginnote{\marginstyle{#1}}}
+\newcommand{\cvsection}[1]{\vspace{0.2cm}\hrule\vspace{0.15cm}\sectionstyle{#1}}
 \renewcommand*{\raggedrightmarginnote}{}
 \reversemarginpar
 
+% ----- PDF SETUP
+\usepackage[bookmarks, colorlinks, breaklinks,
+	pdftitle={Gaurav Chaurasia CV},
+	pdfauthor={Gaurav Chaurasia},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}
+\hypersetup{filecolor=Gray,urlcolor=Gray,linkcolor=Gray,citecolor=Gray}
+
 % ----- PUBLICATIONS
-\newcommand{\jobtitle}[1]{{\bfseries #1}}
-\newcommand{\organization}[1]{{\scshape #1}}
-\newcommand{\location}[1]{#1}
-\newcommand{\advisor}[1]{{\itshape Advisor: #1}}
+\newcommand{\organization}[1]{{\large\scshape #1}}
+\newcommand{\location}[1]{{\large\itshape #1}}
+\newcommand{\jobtitle}[1]{{\itshape #1}}
+\newcommand{\advisor}[1]{{\itshape (Advisor: #1)}}
 \newcommand{\jobdesc}[1]{{#1}}
-\newcommand{\thesis}[1]{{\scshape Thesis:} #1}
+\newcommand{\thesis}[1]{{\scshape Dissertation}: #1}
 
 \newcommand{\paper}[1]{{#1}}
 \newcommand{\authors}[1]{{#1}}
 \newcommand{\journal}[1]{{\itshape #1}}
-\newcommand{\html}[1]{\href{#1}{{\scriptsize\scshape[www]}}}
-\newcommand{\doi}[1]{\href{#1}{{\scriptsize\scshape[doi]}}}
+\newcommand{\html}[1]{\href{#1}{{\scriptsize\scshape [www]}}}
+\newcommand{\doi} [1]{\href{#1}{{\scriptsize\scshape [doi]}}}
 
 \newcommand{\jreview}[3]{#2\dotfill#1} % {\href{#3}{#2}\dotfill#1}
 \newcommand{\creview}[2]{#2\dotfill#1}
 
 \newcommand{\position}[6]{
     \notes{#1}
-    \jobtitle{#2} at \organization{#3}
-    \ifempty{#4}{}{(\location{#4})}
-    \ifempty{#5}{}{\\ \advisor{#5}}
+    \organization{#3}\hfill\location{#4} \\
+    \jobtitle{#2}\ifempty{#5}{}{~\advisor{#5}}
     \ifempty{#6}{}{\\ \jobdesc{#6}}
 }
 
@@ -88,49 +114,54 @@
     \ifempty{#6}{}{\doi{#6}}
 }
 
-\let\origdescription\description
-\renewenvironment{description}{
+\usepackage{enumitem}
+\newenvironment{cvitems}{
     \setlength{\leftmargini}{0cm}
-    \origdescription
     \setlength{\itemindent}{0cm}
     \setlength{\labelsep}{0cm}
-    %\setlength{\itemsep}{0.18cm}
+    \setlength{\topsep}{0cm}
+    \begin{description}
 }
-{\endlist}
+{\end{description}}
+\newenvironment{shortcvitems}{
+    \begin{cvitems}
+    [noitemsep]
+}
+{\end{cvitems}}
 
-\newenvironment{cvitems}{\begin{description}}{\end{description}}
-
-% ----- PDF SETUP
-\usepackage[bookmarks, colorlinks, breaklinks,
-	pdftitle={Gaurav Chaurasia CV},
-	pdfauthor={Gaurav Chaurasia},
-	pdfproducer={http://nitens.org/taraborelli/cvtex}
-]{hyperref}
-\hypersetup{filecolor=Blue,urlcolor=Blue,linkcolor=Gray,citecolor=Black}
+\newcommand{\mailicon}{{\faEnvelope~~}}
+\newcommand{\homeicon}{{\faHome~~}}
+\newcommand{\www} [1]{{\href       {#1}{\color{Gray} \homeicon #1}}}
+\newcommand{\mail}[1]{{\href{mailto:#1}{\color{Gray} \mailicon #1}}}
 
 % ----- DOCUMENT
 \begin{document}
-\begin{center}{\sffamily\bfseries\color{BrickRed}\Huge Gaurav Chaurasia}\vspace{0.1cm}\hrule\end{center}
-\vspace{-0.2cm}{\scshape\color{Gray}email}: \href{mailto:gchauras@mit.edu}{gchauras@mit.edu}
-\hfill
-{\scshape\color{Gray}url}: \href{http://people.csail.mit.edu/gchauras/}{http://people.csail.mit.edu/gchauras/}
+\begin{center}
+\headerstyle{gaurav chaurasia} \\
+\headercontactstyle{disney research zurich, stampfenbachstrasse 48, zurich, switzerland} \\
+\headerurlstyle{
+    \mail{gchauras@mit.edu} \quad \www{http://people.csail.mit.edu/gchauras/}} \\
+\vspace{0.3cm}
+\end{center}
 
 % -----------------------------------------------------------------------------
 %
-\customsection{Research Interests}
-Image-based rendering, 3D reconstruction, image warping, computational photography, GPU accelerated image processing
+\cvsection{research interests}
+\begin{shortcvitems}
+\item Image-based rendering, 3D reconstruction, image warping, computational photography, GPU accelerated image processing
+\end{shortcvitems}
 
 % -----------------------------------------------------------------------------
 
-\customsection{Experience}
+\cvsection{experience}
 \begin{cvitems}
 \item \position
 {2015-}
-{Postdoctoral Associate}
+{Postdoctoral Associate (Computer vision group)}
 {Disney Research Zurich}
-{Switzerland}
+{Zurich, Switzerland}
 {}
-{Computer vision group}
+{}
 
 \item \position
 {2014-2015}
@@ -143,13 +174,13 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 
 % -----------------------------------------------------------------------------
 
-\customsection{Education}
+\cvsection{education}
 \begin{cvitems}
 \item \position
 {2010-2014}
 {Ph.D in Computer Science}
-{INRIA Sophia Antipolis}
-{France}
+{Inria}
+{Sophia Antipolis, France}
 {Dr. George Drettakis}
 {\thesis{Algorithms \amper perceptual analysis for interactive free viewpoint image-based navigation}}
 
@@ -165,14 +196,14 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 {2005-2009}
 {B.Tech in Computer Science}
 {Indian Institute of Technology Delhi}
-{India}
+{New Delhi, India}
 {Prof. Subodh Kumar}
 {\thesis{Real time traffic simulation}}
 \end{cvitems}
 
 % -----------------------------------------------------------------------------
 
-\customsection{Visiting Positions}
+\cvsection{visiting positions}
 \begin{cvitems}
 \item \position
 {Aug 2013}
@@ -193,28 +224,30 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 \item \position
 {Feb-Jun 2010}
 {Intern}
-{INRIA Sophia Antipolis}{France}
+{Inria}
+{Sophia Antipolis, France}
 {Dr. George Drettakis}
 {Image-based rendering for urban scenes.}
 
 \item \position
-{Summer 2008}{Intern}
-{NVIDIA}{Bangalore, India}
+{Summer 2008}
+{Intern (Embedded graphics group)}
+{Nvidia}{Bangalore, India}
 {}
 {OpenGL-ES extensions for GPU driver for embedded systems, OpenGL-ES 2.0 conformance test suite bugs.}
 
 \item \position
 {Summer 2007}
 {Intern}
-{Dublin City University}{Ireland}
+{Dublin City University}
+{Dublin, Ireland}
 {Dr. Derek Molloy}
 {Memory exercises as 3D games and user studies to test effect of 3D user interfaces on human recall.}
-
 \end{cvitems}
 
 % -----------------------------------------------------------------------------
 
-\customsection{Publications}
+\cvsection{publications}
 \begin{cvitems}
 \item \publication
 {2016}
@@ -316,8 +349,9 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 
 % -----------------------------------------------------------------------------
 
-\customsection{Professional Activities}
-\notes{Journal reviews}
+\cvsection{professional activities}
+\begin{cvitems}
+\item \notes{Journal reviews}
     \jreview{2016}{ACM Transactions on Graphics}{http://tog.acm.org/} \\
     \jreview{2014}{ACM Transactions on Applied Perception}{http://tap.acm.org} \\
     \jreview{2015}{Computer Graphics Forum}{http://onlinelibrary.wiley.com/journal/10.1111/\%28ISSN\%291467-8659} \\
@@ -325,33 +359,38 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
     \jreview{2016}{The Visual Computer}{http://link.springer.com/journal/371} \\
     \jreview{2015}{Computers \amper Graphics}{http://www.journals.elsevier.com/computers-and-graphics/} \\
     \jreview{2015}{IEEE Signal Processing Letters}{http://www.signalprocessingsociety.org/publications/periodicals/letters/} \\
-    \jreview{2013}{Journal of Signal Image \amper Video Processing}{http://www.springer.com/engineering/signals/journal/11760} \\[0.18cm]
-\notes{Conference reviews}
+    \jreview{2013}{Journal of Signal Image \amper Video Processing}{http://www.springer.com/engineering/signals/journal/11760}
+\item \notes{Conference reviews}
     \creview{2012,2016}{SIGGRAPH} \\
     \creview{2013}{SIGGRAPH Asia} \\
     \creview{2012,2016}{Eurographics} \\
     \creview{2016}{High Performance Graphics} \\
     \creview{2014,2015}{Pacific Graphics}
+\end{cvitems}
 
 % -----------------------------------------------------------------------------
 
-\customsection{Supervision \amper Teaching}
-\notes{Spring 2016}TA: Advanced Methods in Computer Graphics Seminar \href{https://graphics.ethz.ch/teaching/seminarSS16/home.php}{252-5704-00L} \dotfill ETH Zurich \\
-\notes{Spring 2015}TA: Digital \& Computational Photography \href{https://stellar.mit.edu/S/course/6/sp15/6.815/index.html}{6.815/6.865} \dotfill MIT \\
-\notes{Spring 2013}Co-supervised Kritarth Anand (undergraduate thesis) \dotfill INRIA Sophia Antipolis/IIT Delhi \\
-\notes{Spring 2013}Co-supervised Arunim Samat (undergraduate thesis) \dotfill INRIA Sophia Antipolis/IIT Delhi
+\cvsection{supervision \amper teaching}
+\begin{shortcvitems}
+\item \notes{Spring 2016}TA: Advanced Methods in Computer Graphics Seminar \href{https://graphics.ethz.ch/teaching/seminarSS16/home.php}{252-5704-00L} \dotfill ETH Zurich
+\item \notes{Spring 2015}TA: Digital \& Computational Photography \href{https://stellar.mit.edu/S/course/6/sp15/6.815/index.html}{6.815/6.865} \dotfill MIT
+\item \notes{Spring 2013}Co-supervised Kritarth Anand (undergraduate thesis) \dotfill INRIA Sophia Antipolis/IIT Delhi
+\item \notes{Spring 2013}Co-supervised Arunim Samat (undergraduate thesis) \dotfill INRIA Sophia Antipolis/IIT Delhi
+\end{shortcvitems}
 
 % -----------------------------------------------------------------------------
 
-\customsection{Scholarships \amper Awards}
-\notes{Aug 2010}PhD fellowship (\textit{Allocation de Recherche}) by the French ministry for PhD studies. \\
-\notes{Aug 2009}Scholarship of Excellence (\textit{Bourse d'Excellence}) by ENSIMAG for Master's studies. \\
-\notes{May 2007}Scholarship for 12 week research internship `ODCSSS-07' in Dublin by Science Foundation of Ireland. \\
-\notes{Jun 2005}All India Rank 54 in IIT-JEE 2005 (entrance examination for Indian Institutes of Technology) amongst nearly 300,000 aspirants.
+\cvsection{scholarships \amper awards}
+\begin{shortcvitems}
+\item \notes{Aug 2010}PhD fellowship (\textit{Allocation de Recherche}) by the French ministry for PhD studies.
+\item \notes{Aug 2009}Scholarship of Excellence (\textit{Bourse d'Excellence}) by ENSIMAG for Master's studies.
+\item \notes{May 2007}Scholarship for 12 week research internship `ODCSSS-07' in Dublin by Science Foundation of Ireland.
+\item \notes{Jun 2005}All India Rank 54 in IIT-JEE 2005 (entrance examination for Indian Institutes of Technology) amongst nearly 300,000 aspirants.
+\end{shortcvitems}
 
 % -----------------------------------------------------------------------------
 
-% \customsection{Major Curriculum Projects}
+% \cvsection{major curriculum projects}
 % \notes{Jan 2010}3D Air Hockey with stereo vision and hand tracking (\textit{Course: Virtual Reality}) \\
 % \notes{Apr 2009}Light Field Rendering using CUDA on GPU (\textit{Course: Parallel Programming}) \\
 % \notes{Nov 2008}Ocean Simulation with Fast Fourier Transform on GPU (\textit{Course: Advanced Graphics}) \\
@@ -363,26 +402,31 @@ Image-based rendering, 3D reconstruction, image warping, computational photograp
 
 % -----------------------------------------------------------------------------
 
-\customsection{Technical Skills}
-C++, {\scshape Matlab}, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash, Vim, Visual Studio
+\cvsection{technical skills}
+\begin{cvitems}
+\item C++, {\scshape Matlab}, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash, Vim, Visual Studio
+\end{cvitems}
 
 % -----------------------------------------------------------------------------
 
-\customsection{References}
-\ifthenelse{\equal{0}{0}}
+\cvsection{references}
+\begin{cvitems}
+\ifthenelse{\equal{1}{0}}
 {%
-Available on request.
+\item Available on request.
 }{%
-Dr. George Drettakis {\itshape (Senior Researcher, INRIA Sophia Antipolis, France)} \\
-\href{mailto:george.drettakis@inria.fr}{george.drettakis@inria.fr} \quad\textbar\quad
-\href{http://www-sop.inria.fr/members/George.Drettakis/}{http://www-sop.inria.fr/members/George.Drettakis/} \\[0.3cm]
+\item Dr. George Drettakis \\ {\itshape Directory of Researcher, INRIA Sophia Antipolis, France} \\
+\www{http://www-sop.inria.fr/members/George.Drettakis/} \quad
+\mail{george.drettakis@inria.fr}
 %
-Prof. Fredo Durand {\itshape (Professor, Massachusetts Institute of Technology, Cambridge MA, USA)} \\
-\href{mailto:fredo@mit.edu}{fredo@mit.edu} \quad\textbar\quad
-\href{http://people.csail.mit.edu/fredo/}{http://people.csail.mit.edu/fredo/} \\[0.3cm]
+\item Prof. Fredo Durand \\ {\itshape Professor, Massachusetts Institute of Technology, Cambridge MA, USA} \\
+\www{http://people.csail.mit.edu/fredo/} \quad
+\mail{fredo@mit.edu}
 %
-Dr. Sylvain Paris {\itshape (Senior Researcher, Adobe Research, Cambridge MA, USA)} \\
-\href{mailto:sparis@adobe.com}{sparis@adobe.com} \quad\textbar\quad
-\href{http://people.csail.mit.edu/sparis/}{http://people.csail.mit.edu/sparis/} \\[0.3cm]
+\item Dr. Sylvain Paris \\ {\itshape Senior Researcher, Adobe Research, Cambridge MA, USA} \\
+\www{http://people.csail.mit.edu/sparis/} \quad
+\mail{sparis@adobe.com}
 }
+\end{cvitems}
+
 \end{document}

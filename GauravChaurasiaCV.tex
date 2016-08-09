@@ -49,9 +49,9 @@
 % ---- FONT STYLES
 \newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \sansfont{#1}}}
 \newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}  \bfseries \sansfont{#1}}}
+\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}                     \sansfont{#1}}}
 \newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black} \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
+\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}            \scshape \sansfont{#1}}}
 \newcommand*{\marginstyle}       [1]{{\small      \color{Gray}  #1}}
 
 % ---- HEADER/FOOTER
@@ -62,9 +62,9 @@
 \renewcommand\headrulewidth{0pt}
 \renewcommand\footrulewidth{0pt}
 \fancyhf{}
-\fancyfoot[L]{\footerstyle{Last updated: \today}}
-\fancyfoot[C]{\footerstyle{Typeset in \XeTeX}}
-\fancyfoot[R]{\footerstyle{Page~\thepage~of~\pageref{LastPage}}}
+\fancyfoot[L]{\footerstyle{last updated: \today}}
+\fancyfoot[C]{\footerstyle{typeset in \XeTeX}}
+\fancyfoot[R]{\footerstyle{page~\thepage~of~\pageref{LastPage}}}
 
 % ---- MARGIN
 \usepackage{marginnote}
@@ -168,7 +168,7 @@
 {Postdoctoral Associate}
 {Massachusetts Institute of Technology}
 {Cambridge MA, USA}
-{Prof. Fredo Durand}
+{Prof. Fr{\'e}do Durand}
 {}
 \end{cvitems}
 
@@ -210,7 +210,7 @@
 {Visiting student}
 {Massachusetts Institute of Technology}
 {Cambridge MA, USA}
-{Prof. Fredo Durand}
+{Prof. Fr{\'e}do Durand}
 {Parallel execution of non-parallel recursive filters.}
 
 \item \position
@@ -249,6 +249,15 @@
 
 \cvsection{publications}
 \begin{cvitems}
+
+\item \publication
+{2016}
+{M. Gharbi, \underline{G. Chaurasia}, S. Paris, F. Durand}
+{Deep joint demosaicking and denoising}
+{SIGGRAPH Asia (conditionally accepted)}
+{}
+{}
+
 \item \publication
 {2016}
 {ST Digumarti, \underline{G. Chaurasia}, A. Taneja, A. Thomas, R. Siegwart, P. Beardsley}
@@ -261,7 +270,7 @@
 {2015}
 {M. Gharbi, Y. Shih, \underline{G. Chaurasia}, J. Ragan-Kelley, S. Paris, F. Durand}
 {Transform recipes for efficient cloud photo enhancement}
-{ACM Trans. Graph. 34(6) (SIGGRAPH Asia 2015)}
+{ACM Trans. Graph. 34(6) (SIGGRAPH Asia)}
 {https://groups.csail.mit.edu/graphics/xform_recipes/}
 {http://dx.doi.org/10.1145/2816795.2818127}
 
@@ -269,7 +278,7 @@
 {2015}
 {S. Duch\^{e}ne, C. Riant, \underline{G. Chaurasia}, J. Lopez-Moreno, PY Laffont, S. Popov, A. Bousseau, G. Drettakis}
 {Multi view intrinsic decomposition \amper relighting}
-{ACM Trans. Graph. 34(5) (SIGGRAPH 2016)}
+{ACM Trans. Graph. 34(5)}
 {http://www-sop.inria.fr/reves/Basilic/2015/DRCLLPD15/}
 {http://dx.doi.org/10.1145/2790060.2790063}
 
@@ -301,7 +310,7 @@
 {2013}
 {\underline{G. Chaurasia}, S. Duchene, O. Sorkine-Hornung, G. Drettakis}
 {Depth synthesis and local warps for plausible image-based navigation}
-{ACM Trans. Graph. 32(3) (presented at SIGGRAPH 2013)}
+{ACM Trans. Graph. 32(3)}
 {http://www-sop.inria.fr/reves/Basilic/2013/CDSD13/}
 {http://dx.doi.org/10.1145/2487228.2487238}
 
@@ -309,7 +318,7 @@
 {2013}
 {P. Vangorp, C. Richardt, E.A. Cooper, \underline{G. Chaurasia}, M.S. Banks, G. Drettakis}
 {Perception of perspective distortions in image-based rendering}
-{ACM Trans. Graph. 32(4) (SIGGRAPH 2013)}
+{ACM Trans. Graph. 32(4) (SIGGRAPH)}
 {http://www-sop.inria.fr/reves/Basilic/2013/VRCCBD13/}
 {http://dx.doi.org/10.1145/2461912.2461971}
 
@@ -317,7 +326,7 @@
 {2011}
 {\underline{G. Chaurasia}, O. Sorkine, G. Drettakis}
 {Silhouette-aware warping for image-based rendering}
-{Comput. Graph. Forum 30(4) (EGSR 2011)}
+{Comput. Graph. Forum 30(4) (EGSR)}
 {http://www-sop.inria.fr/reves/Basilic/2011/CSD11/}
 {http://dx.doi.org/10.1111/j.1467-8659.2011.01981.x}
 
@@ -325,7 +334,7 @@
 {2011}
 {P. Vangorp, \underline{G. Chaurasia}, PY Laffont, R. Fleming, G. Drettakis}
 {Perception of visual artifacts in image-based rendering of fa{\c c}ades}
-{Comput. Graph. Forum 30(4) (EGSR 2011)}
+{Comput. Graph. Forum 30(4) (EGSR)}
 {http://www-sop.inria.fr/reves/Basilic/2011/VCLFD11/}
 {http://dx.doi.org/10.1111/j.1467-8659.2011.01983.x}
 
@@ -333,7 +342,7 @@
 {2011}
 {M. Cabral, P. Vangorp, \underline{G. Chaurasia}, E. Chapoulie, M. Hachet, G. Drettakis}
 {A multimode immersive conceptual design system for architectural modeling \amper lighting}
-{IEEE Symposium on 3D User Interfaces (3DUI 2011)}
+{IEEE Symposium on 3D User Interfaces (IEEE 3DUI)}
 {http://www-sop.inria.fr/reves/Basilic/2011/CVCCHD11/}
 {http://dx.doi.org/10.1109/3DUI.2011.5759211}
 
@@ -341,7 +350,7 @@
 {2010}
 {\underline{G. Chaurasia}, B.R. Selvamani, N. Gupta, S. Kumar}
 {Virtual chaotic traffic simulation}
-{Indian Conference on Computer Vision, Graphics \amper Image Processing (ICVGIP 2010)}
+{Indian Conference on Computer Vision, Graphics \amper Image Processing (ICVGIP)}
 {http://people.csail.mit.edu/gchauras/research/pubs/traffsim/}
 {http://dx.doi.org/10.1145/1924559.1924604}
 
@@ -355,17 +364,18 @@
     \jreview{2016}{ACM Transactions on Graphics}{http://tog.acm.org/} \\
     \jreview{2014}{ACM Transactions on Applied Perception}{http://tap.acm.org} \\
     \jreview{2015}{Computer Graphics Forum}{http://onlinelibrary.wiley.com/journal/10.1111/\%28ISSN\%291467-8659} \\
-    \jreview{2015,2016}{IEEE Transactions on Visualization and Computer Graphics}{http://www.computer.org/web/tvcg} \\
+    \jreview{2015, 2016}{IEEE Transactions on Visualization and Computer Graphics}{http://www.computer.org/web/tvcg} \\
     \jreview{2016}{The Visual Computer}{http://link.springer.com/journal/371} \\
     \jreview{2015}{Computers \amper Graphics}{http://www.journals.elsevier.com/computers-and-graphics/} \\
     \jreview{2015}{IEEE Signal Processing Letters}{http://www.signalprocessingsociety.org/publications/periodicals/letters/} \\
     \jreview{2013}{Journal of Signal Image \amper Video Processing}{http://www.springer.com/engineering/signals/journal/11760}
 \item \notes{Conference reviews}
-    \creview{2012,2016}{SIGGRAPH} \\
+    \creview{2012, 2016}{SIGGRAPH} \\
     \creview{2013}{SIGGRAPH Asia} \\
-    \creview{2012,2016}{Eurographics} \\
+    \creview{2012, 2016}{Eurographics} \\
     \creview{2016}{High Performance Graphics} \\
-    \creview{2014,2015,2016}{Pacific Graphics}
+    \creview{2014, 2015, 2016}{Pacific Graphics} \\
+    \creview{2016}{Virtual Reality Science \& Technology}
 \end{cvitems}
 
 % -----------------------------------------------------------------------------
@@ -415,11 +425,11 @@
 {%
 \item Available on request.
 }{%
-\item Dr. George Drettakis \\ {\itshape Directory of Researcher, INRIA Sophia Antipolis, France} \\
+\item Dr. George Drettakis \\ {\itshape Director of Research, INRIA Sophia Antipolis, France} \\
 \www{http://www-sop.inria.fr/members/George.Drettakis/} \quad
 \mail{george.drettakis@inria.fr}
 %
-\item Prof. Fredo Durand \\ {\itshape Professor, Massachusetts Institute of Technology, Cambridge MA, USA} \\
+\item Prof. Fr{\'e}do Durand \\ {\itshape Professor, Massachusetts Institute of Technology, Cambridge MA, USA} \\
 \www{http://people.csail.mit.edu/fredo/} \quad
 \mail{fredo@mit.edu}
 %

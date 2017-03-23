@@ -36,11 +36,9 @@
     BoldItalicFont=*-BoldIt,
 ]{SourceSansPro}
 
-\setmainfont{Cardo}
+\setmainfont[Ligatures={Common}, Numbers={OldStyle}]{Cardo}
 
 \usepackage{fontawesome}
-
-\newcommand{\amper}{~\&~}
 
 % ---- FONT STYLES
 \newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \sansfont{#1}}}
@@ -79,7 +77,7 @@
 
 % ----- PUBLICATIONS
 \newcommand{\organization}[1]{{\large\scshape #1}}
-\newcommand{\location}[1]{{\large\itshape #1}}
+\newcommand{\location}[1]{{\itshape #1}}
 \newcommand{\jobtitle}[1]{{\itshape #1}}
 \newcommand{\advisor}[1]{{\itshape (Advisor: #1)}}
 \newcommand{\jobdesc}[1]{{#1}}
@@ -103,9 +101,9 @@
 
 \newcommand{\publication}[6]{
     \ifempty{#1}{}{\notes{#1}}
-    \ifempty{#2}{}{\authors{#2}}.
-    \ifempty{#3}{}{\paper{#3}},
-    \ifempty{#4}{}{\journal{#4}}.~
+    \ifempty{#2}{}{\authors{#2}} \\
+    \ifempty{#3}{}{\paper{#3}} \\
+    \ifempty{#4}{}{\journal{#4}}~~
     \ifempty{#5}{}{\html{#5}}
     \ifempty{#6}{}{\doi{#6}}
 }
@@ -181,7 +179,7 @@
 {Inria}
 {Sophia Antipolis, France}
 {Dr. George Drettakis}
-{\thesis{Algorithms \amper perceptual analysis for interactive free viewpoint image-based navigation}}
+{\thesis{Algorithms and perceptual analysis for interactive free viewpoint image-based navigation}}
 
 \item \position
 {2009-2010}
@@ -276,7 +274,7 @@
 \item \publication
 {2015}
 {S. Duch\^{e}ne, C. Riant, \underline{G. Chaurasia}, J. Lopez-Moreno, PY Laffont, S. Popov, A. Bousseau, G. Drettakis}
-{Multi view intrinsic decomposition \amper relighting}
+{Multi view intrinsic decomposition and relighting}
 {ACM Trans. Graph. 34(5)}
 {http://www-sop.inria.fr/reves/Basilic/2015/DRCLLPD15/}
 {http://dx.doi.org/10.1145/2790060.2790063}
@@ -340,7 +338,7 @@
 \item \publication
 {2011}
 {M. Cabral, P. Vangorp, \underline{G. Chaurasia}, E. Chapoulie, M. Hachet, G. Drettakis}
-{A multimode immersive conceptual design system for architectural modeling \amper lighting}
+{A multimode immersive conceptual design system for architectural modeling and lighting}
 {IEEE Symposium on 3D User Interfaces (IEEE 3DUI)}
 {http://www-sop.inria.fr/reves/Basilic/2011/CVCCHD11/}
 {http://dx.doi.org/10.1109/3DUI.2011.5759211}
@@ -349,7 +347,7 @@
 {2010}
 {\underline{G. Chaurasia}, B.R. Selvamani, N. Gupta, S. Kumar}
 {Virtual chaotic traffic simulation}
-{Indian Conference on Computer Vision, Graphics \amper Image Processing (ICVGIP)}
+{Indian Conference on Computer Vision, Graphics and Image Processing (ICVGIP)}
 {http://people.csail.mit.edu/gchauras/research/pubs/traffsim/}
 {http://dx.doi.org/10.1145/1924559.1924604}
 
@@ -365,9 +363,9 @@
     \jreview{2015}{Computer Graphics Forum}{http://onlinelibrary.wiley.com/journal/10.1111/\%28ISSN\%291467-8659} \\
     \jreview{2015, 2016}{IEEE Transactions on Visualization and Computer Graphics}{http://www.computer.org/web/tvcg} \\
     \jreview{2016, 2017}{The Visual Computer}{http://link.springer.com/journal/371} \\
-    \jreview{2015, 2017}{Computers \amper Graphics}{http://www.journals.elsevier.com/computers-and-graphics/} \\
+    \jreview{2015, 2017}{Computers and Graphics}{http://www.journals.elsevier.com/computers-and-graphics/} \\
     \jreview{2015}{IEEE Signal Processing Letters}{http://www.signalprocessingsociety.org/publications/periodicals/letters/} \\
-    \jreview{2013}{Journal of Signal Image \amper Video Processing}{http://www.springer.com/engineering/signals/journal/11760}
+    \jreview{2013}{Journal of Signal Image and Video Processing}{http://www.springer.com/engineering/signals/journal/11760}
 \item \notes{Conference reviews}
     \creview{2012, 2016}{SIGGRAPH} \\
     \creview{2013, 2016}{SIGGRAPH Asia} \\
@@ -397,7 +395,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{scholarships \amper awards}
+\cvsection{scholarships and awards}
 \begin{shortcvitems}
 \item \notes{Aug 2010}PhD fellowship (\textit{Allocation de Recherche}) by the French ministry for PhD studies.
 \item \notes{Aug 2009}Scholarship of Excellence (\textit{Bourse d'Excellence}) by ENSIMAG for Master's studies.

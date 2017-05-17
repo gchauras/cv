@@ -79,11 +79,11 @@
 \newcommand{\organization}[1]{{\large\scshape #1}}
 \newcommand{\location}[1]{{\itshape #1}}
 \newcommand{\jobtitle}[1]{{\itshape #1}}
-\newcommand{\advisor}[1]{{\itshape (Advisor: #1)}}
+\newcommand{\adviser}[1]{{\itshape (Adviser: #1)}}
 \newcommand{\jobdesc}[1]{{#1}}
 \newcommand{\thesis}[1]{{\scshape Dissertation}: #1}
 
-\newcommand{\paper}[1]{{#1}}
+\newcommand{\paper}[1]{{\bfseries #1}}
 \newcommand{\authors}[1]{{#1}}
 \newcommand{\journal}[1]{{\itshape #1}}
 \newcommand{\html}[1]{\href{#1}{{\scriptsize\scshape [www]}}}
@@ -95,14 +95,14 @@
 \newcommand{\position}[6]{
     \notes{#1}
     \organization{#3}\hfill\location{#4} \\
-    \jobtitle{#2}\ifempty{#5}{}{~\advisor{#5}}
+    \jobtitle{#2}\ifempty{#5}{}{~\adviser{#5}}
     \ifempty{#6}{}{\\ \jobdesc{#6}}
 }
 
 \newcommand{\publication}[6]{
     \ifempty{#1}{}{\notes{#1}}
-    \ifempty{#2}{}{\authors{#2}} \\
     \ifempty{#3}{}{\paper{#3}} \\
+    \ifempty{#2}{}{\authors{#2}} \\
     \ifempty{#4}{}{\journal{#4}}~~
     \ifempty{#5}{}{\html{#5}}
     \ifempty{#6}{}{\doi{#6}}
@@ -154,7 +154,7 @@
 \cvsection{experience}
 \begin{cvitems}
 \item \position
-{2015-}
+{2015-till date}
 {Postdoctoral Associate (computer vision)}
 {Disney Research Zurich}
 {Zurich, Switzerland}
@@ -177,7 +177,7 @@
 \item \position
 {2010-2014}
 {Ph.D in Computer Science}
-{Inria}
+{INRIA}
 {Sophia Antipolis, France}
 {Dr. George Drettakis}
 {\thesis{Algorithms and perceptual analysis for interactive free viewpoint image-based navigation}}
@@ -222,7 +222,7 @@
 \item \position
 {Feb-Jun 2010}
 {Research intern}
-{Inria}
+{INRIA}
 {Sophia Antipolis, France}
 {Dr. George Drettakis}
 {Image-based rendering for urban scenes.}
@@ -435,11 +435,11 @@
 
 \cvsection{references}
 \begin{cvitems}
-\ifthenelse{\equal{1}{0}}
+\ifthenelse{\equal{0}{0}}
 {%
 \item Available on request.
 }{%
-\item Dr. George Drettakis \\ {\itshape Director of Research, INRIA Sophia Antipolis, France} \\
+\item Dr. George Drettakis \\ {\itshape Senior Researcher, INRIA Sophia Antipolis, France} \\
 \www{http://www-sop.inria.fr/members/George.Drettakis/} \quad
 \mail{george.drettakis@inria.fr}
 %

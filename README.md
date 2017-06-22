@@ -1,15 +1,14 @@
 # Xelatex based CV
 
-- XeLateX (bundled with the 2012 or above release of [texlive]))
-- Fonts bundled in the repo
+- XeLateX (from the latest version of [texlive]))
+- [Source Sans Pro] and [Cardo] fonts
 
 ## Acknowledgements
 
-- [George Duffner] for the open source [EB Garamond] font
+- Open source fonts
 - [Practical typography] for helpful advice
 
-
 [texlive]: http://www.tug.org/texlive/
-[EB Garamond]: https://github.com/georgd/eb-garamond
-[George Duffner]: http://www.georgduffner.at/ebgaramond/index.html
+[Source Sans Pro]: https://fonts.google.com/specimen/Source+Sans+Pro
+[Cardo]: http://www.scholarsfonts.net/cardofnt.html
 [Practical typography]: http://practicaltypography.com/

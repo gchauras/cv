@@ -26,26 +26,27 @@
 \usepackage{xltxtra}
 \defaultfontfeatures{Mapping=tex-text}
 
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
-\fontdir
-\newfontfamily\sansfont[
-    Path=\@fontdir,
-    UprightFont=*-Regular,
-    ItalicFont=*-It,
-    BoldFont=*-Bold,
-    BoldItalicFont=*-BoldIt,
-]{SourceSansPro}
+% \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+% \fontdir
+% \newfontfamily\textsf[
+%     Path=\@fontdir,
+%     UprightFont=*-Regular,
+%     ItalicFont=*-It,
+%     BoldFont=*-Bold,
+%     BoldItalicFont=*-BoldIt,
+% ]{SourceSansPro}
 
+\setsansfont{Source Sans Pro}
 \setmainfont[Ligatures={Common}, Numbers={OldStyle}]{Cardo}
 
 \usepackage{fontawesome}
 
 % ---- FONT STYLES
-\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}  \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}                     \sansfont{#1}}}
-\newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black} \bfseries \scshape \sansfont{#1}}}
-\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}            \scshape \sansfont{#1}}}
+\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \textsf{#1}}}
+\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}  \bfseries \scshape \textsf{#1}}}
+\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}                     \textsf{#1}}}
+\newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black} \bfseries \scshape \textsf{#1}}}
+\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}  #1}}
 \newcommand*{\marginstyle}       [1]{{\small      \color{Gray}  #1}}
 
 % ---- HEADER/FOOTER
@@ -56,9 +57,9 @@
 \renewcommand\headrulewidth{0pt}
 \renewcommand\footrulewidth{0pt}
 \fancyhf{}
-\fancyfoot[L]{\footerstyle{last updated: \today}}
-\fancyfoot[C]{\footerstyle{typeset in \XeTeX}}
-\fancyfoot[R]{\footerstyle{page~\thepage~of~\pageref{LastPage}}}
+\fancyfoot[L]{\footerstyle{Last updated: \today}}
+\fancyfoot[C]{\footerstyle{Typeset in \XeTeX}}
+\fancyfoot[R]{\footerstyle{Page~\thepage~of~\pageref{LastPage}}}
 
 % ---- MARGIN
 \usepackage{marginnote}

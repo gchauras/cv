@@ -1,4 +1,5 @@
 # Compiled source
+build/*
 *.o
 *.lib
 *.a
@@ -21,15 +22,15 @@
 *.aux
 *.ps
 *.dvi
-*.lof 
-*.idx 
-*.bbl 
-*.bcf 
-*.bak 
-*.log 
-*.out 
-*.xml 
-*.blg 
+*.lof
+*.idx
+*.bbl
+*.bcf
+*.bak
+*.log
+*.out
+*.xml
+*.blg
 *.toc
 
 # Packages

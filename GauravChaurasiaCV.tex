@@ -24,30 +24,17 @@
 % ---- FONTS
 \usepackage{xunicode}
 \usepackage{xltxtra}
+\usepackage{fontawesome}
 \defaultfontfeatures{Mapping=tex-text}
-
-% \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
-% \fontdir
-% \newfontfamily\textsf[
-%     Path=\@fontdir,
-%     UprightFont=*-Regular,
-%     ItalicFont=*-It,
-%     BoldFont=*-Bold,
-%     BoldItalicFont=*-BoldIt,
-% ]{SourceSansPro}
-
 \setsansfont{Source Sans Pro}
 \setmainfont[Ligatures={Common}, Numbers={OldStyle}]{Cardo}
 
-\usepackage{fontawesome}
-
 % ---- FONT STYLES
-\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \scshape \textsf{#1}}}
-\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}  \bfseries \scshape \textsf{#1}}}
-\newcommand*{\headerurlstyle}    [1]{{\normalsize \color{Gray}                     \textsf{#1}}}
-\newcommand*{\sectionstyle}      [1]{{\normalsize \color{Black} \bfseries \scshape \textsf{#1}}}
+\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \textsf{#1}}}
+\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}            \textsf{#1}}}
+\newcommand*{\sectionstyle}      [1]{{\small      \color{Black} \bfseries \textsf{#1}}}
 \newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}  #1}}
-\newcommand*{\marginstyle}       [1]{{\small      \color{Gray}  #1}}
+\newcommand*{\marginstyle}       [1]{{\scriptsize \color{Gray}  #1}}
 
 % ---- HEADER/FOOTER
 \usepackage{fancyhdr}
@@ -132,16 +119,17 @@
 % ----- DOCUMENT
 \begin{document}
 \begin{center}
-\headerstyle{gaurav chaurasia} \\
-\headercontactstyle{disney research zurich, stampfenbachstrasse 48, zurich 8006, switzerland} \\
-\headerurlstyle{
-    \mail{cgaurav@inf.ethz.ch} \quad \www{http://people.inf.ethz.ch/cgaurav/}} \\
+\headerstyle{GAURAV CHAURASIA} \\
+\headercontactstyle{
+    DISNEY RESEARCH ZURICH, STAMPFENBACHSTRASSE 48, ZURICH 8006, SWITZERLAND \\
+    \mail{cgaurav@inf.ethz.ch} \quad \www{http://people.inf.ethz.ch/cgaurav/}
+} \\
 \vspace{0.3cm}
 \end{center}
 
 % -----------------------------------------------------------------------------
 %
-\cvsection{research interests}
+\cvsection{RESEARCH INTERESTS}
 \begin{shortcvitems}
 \item Image-based rendering and 3D reconstruction
 \item Model extraction from RGB-D data
@@ -152,7 +140,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{experience}
+\cvsection{EXPERIENCE}
 \begin{cvitems}
 \item \position
 {2015-till date}
@@ -173,7 +161,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{education}
+\cvsection{EDUCATION}
 \begin{cvitems}
 \item \position
 {2010-2014}
@@ -202,7 +190,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{visiting positions}
+\cvsection{VISITING POSITIONS}
 \begin{cvitems}
 \item \position
 {Aug 2013}
@@ -246,7 +234,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{publications}
+\cvsection{PUBLICATIONS}
 \begin{cvitems}
 
 \item \publication
@@ -254,8 +242,8 @@
 {\underline{G. Chaurasia}, P. Beardsley}
 {Editable parametric dense foliage from 3D capture}
 {IEEE International Conference on Computer Vision (ICCV)}
+{https://www.disneyresearch.com/publications/parametric-foliage/}
 {http://openaccess.thecvf.com/content_iccv_2017/html/Chaurasia_Editable_Parametric_Dense_ICCV_2017_paper.html}
-{}
 
 \item \publication
 {2016}
@@ -365,7 +353,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{supervised theses}
+\cvsection{SUPERVISED THESES}
 \begin{cvitems}
 \item \publication
     {Spring 2017}
@@ -384,7 +372,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{teaching}
+\cvsection{TEACHING}
 \begin{shortcvitems}
 \item \notes{Autumn 2016}Advanced Topics in Computer Graphics \& Vision Seminar \href{https://graphics.ethz.ch/teaching/seminarAS16/home.php}{252-5701-00L} \dotfill ETH Zurich
 \item \notes{Spring 2016}Advanced Topics in Computer Graphics Seminar \href{https://graphics.ethz.ch/teaching/seminarSS16/home.php}{252-5704-00L} \dotfill ETH Zurich
@@ -394,7 +382,7 @@
 % -----------------------------------------------------------------------------
 
 
-\cvsection{professional activities}
+\cvsection{PROFESSIONAL ACTIVITIES}
 \begin{cvitems}
 \item \notes{Journal reviews}
     \jreview{2016, 2017}{ACM Transactions on Graphics}{http://tog.acm.org/} \\
@@ -416,7 +404,7 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{scholarships and awards}
+\cvsection{SCHOLARSHIPS AND AWARDS}
 \begin{shortcvitems}
 \item \notes{Aug 2010}PhD fellowship (\textit{Allocation de Recherche}) by the French ministry for PhD studies.
 \item \notes{Aug 2009}Scholarship of Excellence (\textit{Bourse d'Excellence}) by ENSIMAG for Master's studies.
@@ -426,7 +414,7 @@
 
 % -----------------------------------------------------------------------------
 
-% \cvsection{major curriculum projects}
+% \cvsection{MAJOR CURRICULUM PROJECTS}
 % \notes{Jan 2010}3D Air Hockey with stereo vision and hand tracking (\textit{Course: Virtual Reality}) \\
 % \notes{Apr 2009}Light Field Rendering using CUDA on GPU (\textit{Course: Parallel Programming}) \\
 % \notes{Nov 2008}Ocean Simulation with Fast Fourier Transform on GPU (\textit{Course: Advanced Graphics}) \\
@@ -438,14 +426,14 @@
 
 % -----------------------------------------------------------------------------
 
-\cvsection{technical skills}
+\cvsection{TECHNICAL SKILLS}
 \begin{cvitems}
 \item C++, {\scshape Matlab}, Python, OpenGL, GLSL, CUDA, OpenCV, Java, \LaTeX, SVN, Git, Bash, Vim, Visual Studio
 \end{cvitems}
 
 % -----------------------------------------------------------------------------
 
-\cvsection{references}
+\cvsection{REFERENCES}
 \begin{cvitems}
 \ifthenelse{\equal{0}{0}}
 {%

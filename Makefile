@@ -12,6 +12,9 @@ BUILDIR	:= build
 
 all: $(DOC).pdf
 
+${DOC}.tex: cv.yml generate.py
+	python3 generate.py cv.yml ${DOC}.tex 1
+
 $(BUILDIR)/$(DOC).pdf: $(DOC).tex $(STY) $(FONTS)
 	$(MKDIR) $(BUILDIR)
 	$(LATEX) -output-directory=$(BUILDIR) $(DOC)
@@ -21,4 +24,4 @@ $(DOC).pdf: $(BUILDIR)/$(DOC).pdf
 	$(MV) $(BUILDIR)/$(DOC).pdf .
 
 clean:
-	$(RM) $(BUILDIR) $(DOC).pdf
+	$(RM) $(BUILDIR) ${DOC}.tex $(DOC).pdf

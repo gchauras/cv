@@ -1,0 +1,117 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+
+% ---- CONDITIONALS
+\usepackage{ifthen}
+\usepackage{ifxetex}
+\usepackage{xifthen}
+\newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
+
+% ---- DOCUMENT LAYOUT
+\usepackage{geometry}
+\geometry{a4paper,textwidth=5.3in,textheight=8.7in,marginparsep=7pt,marginparwidth=.8in}
+\setlength\parindent{0in}
+
+% ---- COLORS
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{Black}{rgb}{0,0,0}
+\definecolor{Gray}{rgb}{0.45,0.45,0.45}
+\definecolor{Blue}{rgb}{0.0,0.0,1.0}
+
+% ---- FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{fontawesome}
+\defaultfontfeatures{Mapping=tex-text}
+\setsansfont{Source Sans Pro}
+\setmainfont[Ligatures={Common}, Numbers={OldStyle}]{Cardo}
+
+% ---- FONT STYLES
+\newcommand*{\headerstyle}       [1]{{\Huge       \color{Black} \bfseries \textsf{#1}}}
+\newcommand*{\headercontactstyle}[1]{{\normalsize \color{Gray}            \textsf{#1}}}
+\newcommand*{\sectionstyle}      [1]{{\small      \color{Black} \bfseries \textsf{#1}}}
+\newcommand*{\footerstyle}       [1]{{\scriptsize \color{Gray}  #1}}
+\newcommand*{\marginstyle}       [1]{{\scriptsize \color{Gray}  #1}}
+
+% ---- HEADER/FOOTER
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\fancyhf{}
+\fancyfoot[L]{\footerstyle{Last updated: \today}}
+\fancyfoot[C]{\footerstyle{Typeset in \XeTeX}}
+\fancyfoot[R]{\footerstyle{Page~\thepage~of~\pageref{LastPage}}}
+
+% ---- MARGIN
+\usepackage{marginnote}
+\newcommand{\notes}[1]{\marginnote{\marginstyle{#1}}}
+\newcommand{\cvsection}[1]{\vspace{0.2cm}\hrule\vspace{0.15cm}\sectionstyle{#1}}
+\renewcommand*{\raggedrightmarginnote}{}
+\reversemarginpar
+
+% ----- PDF SETUP
+\usepackage[bookmarks, colorlinks, breaklinks,
+	pdftitle={Gaurav Chaurasia CV},
+	pdfauthor={Gaurav Chaurasia},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}
+\hypersetup{filecolor=Gray,urlcolor=Gray,linkcolor=Gray,citecolor=Gray}
+
+% ----- PUBLICATIONS
+\newcommand{\organization}[1]{{\large\scshape #1}}
+\newcommand{\location}[1]{{\itshape #1}}
+\newcommand{\jobtitle}[1]{{\itshape #1}}
+\newcommand{\adviser}[1]{{\itshape (Adviser: #1)}}
+\newcommand{\jobdesc}[1]{{#1}}
+\newcommand{\thesis}[1]{{\scshape Dissertation}: #1}
+
+\newcommand{\paper}[1]{{\bfseries #1}}
+\newcommand{\authors}[1]{{#1}}
+\newcommand{\journal}[1]{{\itshape #1}}
+\newcommand{\html}[1]{\href{#1}{{\scriptsize\scshape [www]}}}
+\newcommand{\doi} [1]{\href{#1}{{\scriptsize\scshape [doi]}}}
+
+\newcommand{\jreview}[3]{#2\dotfill#1} % {\href{#3}{#2}\dotfill#1}
+\newcommand{\creview}[2]{#2\dotfill#1}
+
+\newcommand{\position}[6]{
+    \notes{#1}
+    \organization{#3}\hfill\location{#4} \\
+    \jobtitle{#2}\ifempty{#5}{}{~\adviser{#5}}
+    \ifempty{#6}{}{\\ \jobdesc{#6}}
+}
+
+\newcommand{\publication}[6]{
+    \ifempty{#1}{}{\notes{#1}}
+    \ifempty{#3}{}{\paper{#3}} \\
+    \ifempty{#2}{}{\authors{#2}} \\
+    \ifempty{#4}{}{\journal{#4}}~~
+    \ifempty{#5}{}{\html{#5}}
+    \ifempty{#6}{}{\doi{#6}}
+}
+
+\usepackage{enumitem}
+\newenvironment{cvitems}{
+    \setlength{\leftmargini}{0cm}
+    \setlength{\itemindent}{0cm}
+    \setlength{\labelsep}{0cm}
+    \setlength{\topsep}{0cm}
+    \begin{description}
+}
+{\end{description}}
+\newenvironment{shortcvitems}{
+    \begin{cvitems}
+    [noitemsep]
+}
+{\end{cvitems}}
+
+\newcommand{\mailicon}{{\faEnvelope~~}}
+\newcommand{\homeicon}{{\faHome~~}}
+\newcommand{\www} [1]{{\href       {#1}{\color{Gray} \homeicon #1}}}
+\newcommand{\mail}[1]{{\href{mailto:#1}{\color{Gray} \mailicon #1}}}

@@ -1,7 +1,7 @@
 name: Gaurav Chaurasia
-affiliation: Disney Research
-address: Stampfenbachstrasse 48, Zurich 8006, Switzerland
-email: gaurav.chaurasia@outlook.com
+affiliation:
+address:
+email: gchauras@csail.mit.edu
 web: http://people.csail.mit.edu/gchauras/
 
 research_interests:
@@ -32,7 +32,13 @@ education:
       thesis:       Real time traffic simulation
 
 positions:
-    - date:         2015-till date
+    - date:         2018-till date
+      title:
+      affiliation:  Oculus
+      location:     Zurich, Switzerland
+      mentor:
+      notes:
+    - date:         2015-2017
       title:        Associate Research Scientist (computer vision)
       affiliation:  Disney Research Zurich
       location:     Zurich, Switzerland
@@ -303,6 +309,10 @@ reviews:
             - year: 2013
 
     conference:
+        - title: CVPR
+          years:
+            - year: 2018
+              url: http://cvpr2018.thecvf.com/
         - title: SIGGRAPH
           years:
             - year: 2012

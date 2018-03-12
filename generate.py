@@ -24,9 +24,14 @@ def latex_cv(in_file, out_file, show_refs):
 
         f.write('\\begin{center} \n')
         f.write('\headerstyle{' + cv['name'].upper() + '} \\\\ \n')
+        affiliation = ''
+        if cv['affiliation']:
+            affiliation = cv['affiliation'].upper()
+        if cv['address']:
+            affiliation = cv['address'].upper()
         f.write('\headercontactstyle{' +
-                cv['affiliation'].upper() + ', ' +
-                cv['address'].upper() + '\\\\' + '\mail{' +
+                affiliation'] else '' + ', ' +
+                cv['address'].upper() if cv['address'] else '' + '\\\\' + '\mail{' +
                 cv['email'] + '} \quad \www{' +
                 cv['web'] + '}} \n')
         f.write('\\vspace{0.3cm} \n')

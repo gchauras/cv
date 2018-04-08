@@ -30,8 +30,8 @@ def latex_cv(in_file, out_file, show_refs):
         if cv['address']:
             affiliation = cv['address'].upper()
         f.write('\headercontactstyle{' +
-                affiliation'] else '' + ', ' +
-                cv['address'].upper() if cv['address'] else '' + '\\\\' + '\mail{' +
+                cv['affiliation'].upper() + ', ' +
+                cv['address'].upper() + '\\\\' + '\mail{' +
                 cv['email'] + '} \quad \www{' +
                 cv['web'] + '}} \n')
         f.write('\\vspace{0.3cm} \n')
@@ -48,7 +48,10 @@ def latex_cv(in_file, out_file, show_refs):
         for p in cv['positions']:
             f.write('\item \position')
             f.write('{' + p['date'] + '} \n')
-            f.write('{' + p['title'] + '} \n')
+            if 'title' in p and p['title'] and p['title'] is not None:
+                f.write('{' + p['title'] + '} \n')
+            else:
+                f.write('{} \n')
             f.write('{' + p['affiliation'] + '} \n')
             f.write('{' + p['location'] + '} \n')
             if 'mentor' in p and p['mentor'] and p['mentor'] is not None:
@@ -139,6 +142,14 @@ def latex_cv(in_file, out_file, show_refs):
 
         f.write('\cvsection{PROFESSIONAL ACTIVITIES} \n')
         f.write('\\begin{cvitems} \n')
+        f.write('\item \\notes{Grant proposal reviews} \n')
+        for r in cv['reviews']['grants']:
+            years = [ str(y['year']) for y in r['years'] ]
+            f.write('\jreview' +
+                    '{' + ', '.join(years) + '}'
+                    '{' + r['title']       + '}' +
+                    '{' + r['url']         + '} \\\\ \n')
+
         f.write('\item \\notes{Journal reviews} \n')
         for r in cv['reviews']['journal']:
             years = [ str(y['year']) for y in r['years'] ]

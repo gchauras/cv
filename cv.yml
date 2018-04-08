@@ -1,15 +1,14 @@
 name: Gaurav Chaurasia
-affiliation:
-address:
+affiliation: Oculus
+address: Zurich, Switzerland
 email: gchauras@csail.mit.edu
 web: http://people.csail.mit.edu/gchauras/
 
 research_interests:
-    - Image-based rendering and 3D reconstruction
-    - Model extraction from RGB-D data
-    - Compilers and GPU acceleration for image synthesis
-    - Convolutional Neural networks for computational photography
-    - Neural networks for 2D/3D synthesis
+    - Computer vision and machine learning for VR and related applications.
+    - 3D reconstruction and fitting to RGB-D data.
+    - Neural networks for 2D/3D synthesis.
+    - Hardware acceleration -- compilers, GPGPU, ARM-optimisation.
 
 education:
     - date:         2010-2014
@@ -33,7 +32,7 @@ education:
 
 positions:
     - date:         2018-till date
-      title:
+      title:        Computer Vision
       affiliation:  Oculus
       location:     Zurich, Switzerland
       mentor:
@@ -270,6 +269,15 @@ talks:
       internal: 1
 
 reviews:
+    grants:
+        - title: National Science Foundation (USA)
+          years:
+            - year: 2017
+          url: https://www.nsf.gov
+        - title: Agence Nationale de la Recherche (France)
+          years:
+            - year: 2018
+          url: http://www.agence-nationale-recherche.fr
     journal:
         - title: ACM Transactions on Graphics
           url:   http://tog.acm.org

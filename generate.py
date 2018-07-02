@@ -110,23 +110,29 @@ def latex_cv(in_file, out_file, show_refs):
                 prev_year = p['year']
             else:
                 f.write('{}')
-            f.write('{' + p['author']  + '}')
-            f.write('{' + p['title']   + '}')
+            f.write('{' + p['author'] + '}')
+            f.write('{' + p['title'] + '}')
             if 'note' in p and p['note']:
-                f.write('{' + p['journal'] + ' (' +  p['note'] + ')' + '}')
+                f.write('{' + p['journal'] + ' (' + p['note'] + ')' + '}')
             else:
                 f.write('{' + p['journal'] + '}')
-            f.write('{' + p['url']     + '}')
-            f.write('{' + p['doi']     + '}\n')
+            if 'url' in p and p['url']:
+                f.write('{' + p['url'] + '}')
+            else:
+                f.write('{}')
+            if 'doi' in p and p['doi']:
+                f.write('{' + p['doi'] + '}\n')
+            else:
+                f.write('{}')
         f.write('\\end{cvitems} \n')
 
         f.write('\cvsection{SUPERVISED THESES} \n')
         f.write('\\begin{cvitems} \n')
         for p in cv['supervised_theses']:
             f.write('\item \publication')
-            f.write('{' + p['date']   + '}')
+            f.write('{' + p['date'] + '}')
             f.write('{' + p['author'] + '}')
-            f.write('{' + p['title']  + '}')
+            f.write('{' + p['title'] + '}')
             f.write('{' + p['school'] + '}')
             f.write('{}')
             f.write('{}\n')
@@ -144,26 +150,26 @@ def latex_cv(in_file, out_file, show_refs):
         f.write('\\begin{cvitems} \n')
         f.write('\item \\notes{Grant proposal reviews} \n')
         for r in cv['reviews']['grants']:
-            years = [ str(y['year']) for y in r['years'] ]
+            years = [str(y['year']) for y in r['years']]
             f.write('\jreview' +
                     '{' + ', '.join(years) + '}'
-                    '{' + r['title']       + '}' +
-                    '{' + r['url']         + '} \\\\ \n')
+                    '{' + r['title'] + '}' +
+                    '{' + r['url'] + '} \\\\ \n')
 
         f.write('\item \\notes{Journal reviews} \n')
         for r in cv['reviews']['journal']:
-            years = [ str(y['year']) for y in r['years'] ]
+            years = [str(y['year']) for y in r['years']]
             f.write('\jreview' +
                     '{' + ', '.join(years) + '}'
-                    '{' + r['title']       + '}' +
-                    '{' + r['url']         + '} \\\\ \n')
+                    '{' + r['title'] + '}' +
+                    '{' + r['url'] + '} \\\\ \n')
 
         f.write('\item \\notes{Conference reviews} \n')
         for r in cv['reviews']['conference']:
-            years = [ str(y['year']) for y in r['years'] ]
+            years = [str(y['year']) for y in r['years']]
             f.write('\creview' +
                     '{' + ', '.join(years) + '}' +
-                    '{' + r['title']       + '} \\\\ \n')
+                    '{' + r['title'] + '} \\\\ \n')
         f.write('\\end{cvitems} \n')
 
         f.write('\cvsection{SCHOLARSHIPS AND AWARDS} \n')
@@ -181,10 +187,13 @@ def latex_cv(in_file, out_file, show_refs):
         if show_refs:
             f.write('\\begin{cvitems} \n')
             for s in cv['references']:
-                f.write('\item '  + s['name'] + ' \\\\ \n' +
-                        '{ \itshape ' + s['title'] + '} \\\\ \n'
-                        '\www{'   + s['www'] + '} \quad'
-                        '\mail{' + s['mail'] + '} \n')
+                f.write('\item ' + s['name'] + ' \\\\ \n' +
+                        '{ \itshape ' + s['title'] + '} \\\\ \n')
+                if 'www' in s and s['www']:
+                    f.write('\www{' + s['www'] + '} \quad')
+                if 'mail' in s and s['mail']:
+                    f.write('\mail{' + s['mail'] + '}')
+                f.write('\n')
             f.write('\\end{cvitems} \n')
         else:
             f.write('Available on request \n')
@@ -193,10 +202,10 @@ def latex_cv(in_file, out_file, show_refs):
 # ------------------------------------------------------------------------------
 
 if __name__ == '__main__':
-    if len(sys.argv)==4:
-        in_file   = sys.argv[1]
-        out_file  = sys.argv[2]
-        show_refs = True if int(sys.argv[3])>0 else False
+    if len(sys.argv) == 4:
+        in_file = sys.argv[1]
+        out_file = sys.argv[2]
+        show_refs = True if int(sys.argv[3]) > 0 else False
         latex_cv(in_file, out_file, show_refs)
         sys.exit(0)
     else:

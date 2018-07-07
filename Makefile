@@ -13,7 +13,7 @@ BUILDIR	:= build
 all: $(DOC).pdf
 
 ${DOC}.tex: cv.yml generate.py
-	python3 generate.py cv.yml ${DOC}.tex 1
+	python3 generate.py cv.yml ${DOC}.tex 0
 
 $(BUILDIR)/$(DOC).pdf: $(DOC).tex $(STY) $(FONTS)
 	$(MKDIR) $(BUILDIR)

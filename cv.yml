@@ -294,6 +294,10 @@ reviews:
           url:   http://tap.acm.org
           years:
             - year: 2014
+        - title: IEEE Transations on Image Processing
+          url:   https://ieeexplore.ieee.org/xpl/aboutJournal.jsp?punumber=83
+          years:
+            - year: 2018
         - title: IEEE Transactions on Visualization and Computer Graphics
           url:   http://www.computer.org/web/tvcg
           years:
@@ -327,6 +331,10 @@ reviews:
           years:
             - year: 2018
               url: http://cvpr2018.thecvf.com/
+        - title: ACCV
+          years:
+            - year: 2018
+              url: http://accv2018.net/
         - title: SIGGRAPH
           years:
             - year: 2012
